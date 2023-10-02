@@ -26,8 +26,9 @@ class DioClient {
       ..options.responseType = ResponseType.json
       ..interceptors.add(
         PrettyDioLogger(
-            compact: false,
-            logPrint: (object) => log(object.toString(), name: 'TMDB API')),
+          compact: false,
+          logPrint: (object) => log(object.toString(), name: 'TMDB API'),
+        ),
       )
       ..interceptors.add(
         RetryInterceptor(
@@ -36,7 +37,7 @@ class DioClient {
           retryDelays: const [
             Duration(seconds: 2),
             Duration(seconds: 5),
-            Duration(seconds: 12)
+            Duration(seconds: 12),
           ],
         ),
       );

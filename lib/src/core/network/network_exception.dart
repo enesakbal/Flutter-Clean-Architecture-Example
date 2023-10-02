@@ -42,9 +42,7 @@ class NetworkExceptions extends Equatable implements Exception {
         break;
 
       case DioExceptionType.badResponse:
-        message = NetworkErrorModel.fromJson(
-                    dioException.response?.data as Map<String, dynamic>)
-                .statusMessage ??
+        message = NetworkErrorModel.fromJson(dioException.response?.data as Map<String, dynamic>).statusMessage ??
             'Unexpected bad response';
         break;
 
