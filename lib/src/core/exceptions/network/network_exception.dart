@@ -70,7 +70,6 @@ class NetworkException extends Equatable implements Exception {
         message = 'Unexpected error occurred';
         break;
     }
-    message = 'Something went wrong';
   }
 
   @override

@@ -19,7 +19,7 @@ class MovieLocalDataSourceImpl implements MovieLocalDataSource {
     try {
       final db = await _openDb();
 
-      db.movieDetailCollections.filter().idEqualTo(movieId).deleteAll();
+      db.writeTxn(() async => db.movieDetailCollections.filter().idEqualTo(movieId).deleteAll());
 
       await db.close();
     } catch (_) {
@@ -48,8 +48,7 @@ class MovieLocalDataSourceImpl implements MovieLocalDataSource {
   Future<void> saveMovieDetail({required MovieDetailCollection movieDetailCollection}) async {
     try {
       final db = await _openDb();
-
-      await db.movieDetailCollections.put(movieDetailCollection);
+      db.writeTxn(() async => db.movieDetailCollections.put(movieDetailCollection));
 
       await db.close();
     } catch (_) {

@@ -30,7 +30,7 @@ class DioClient {
     _dio
       ..options.baseUrl = appConstants.baseUrl
       ..options.headers = {
-        HttpHeaders.contentTypeHeader: ContentType.json,
+        HttpHeaders.contentTypeHeader: ContentType.json.mimeType,
         HttpHeaders.authorizationHeader: 'Bearer ${appConstants.apiToken}',
       }
       ..options.connectTimeout = const Duration(milliseconds: 15000)
