@@ -1,14 +1,34 @@
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 
-import 'model/error_model.dart';
+import '../../network/model/error_model.dart';
 
-/// The NetworkExceptions class is a custom exception class that extends the Equatable class.
-class NetworkExceptions extends Equatable implements Exception {
+///
+/// This class extends [Equatable] and implements [Exception].
+/// It contains a [message] and a [statusCode] property.
+/// The [message] property contains the error message and the [statusCode]
+/// property contains the HTTP status code of the response.
+///
+/// This class has a constructor [fromDioError] which takes a [DioException]
+/// as a parameter and sets the [statusCode] and [message] properties based on
+/// the type of the [DioException].
+///
+/// This class also overrides the [props] getter from [Equatable] to compare
+/// instances of this class based on the [message] and [statusCode] properties.
+///
+/// Example usage:
+/// ```dart
+/// try {
+///   // some network request
+/// } on DioException catch (e) {
+///   throw NetworkException.fromDioError(e);
+/// }
+/// ```
+class NetworkException extends Equatable implements Exception {
   late final String message;
   late final int? statusCode;
 
-  NetworkExceptions.fromDioError(DioException dioException) {
+  NetworkException.fromDioError(DioException dioException) {
     statusCode = dioException.response?.statusCode;
 
     switch (dioException.type) {
@@ -42,8 +62,8 @@ class NetworkExceptions extends Equatable implements Exception {
         break;
 
       case DioExceptionType.badResponse:
-        message = NetworkErrorModel.fromJson(dioException.response?.data as Map<String, dynamic>).statusMessage ??
-            'Unexpected bad response';
+        final model = NetworkErrorModel.fromJson(dioException.response?.data as Map<String, dynamic>);
+        message = model.statusMessage ?? 'Unexpected bad response';
         break;
 
       case DioExceptionType.unknown:
