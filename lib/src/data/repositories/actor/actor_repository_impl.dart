@@ -5,7 +5,7 @@ import '../../../core/exceptions/network/network_exception.dart';
 import '../../../domain/entities/actor_detail/actor_detail_entity.dart';
 import '../../../domain/entities/actor_social_media/actor_social_medias_entity.dart';
 import '../../../domain/repositories/actor/actor_repository.dart';
-import '../../datasources/remote/actor/actor_remote_data_source.dart';
+import '../../datasources/export_datasources.dart';
 
 class ActorRepositoryImpl implements ActorRepository {
   final ActorRemoteDataSource _actorRemoteDataSource;

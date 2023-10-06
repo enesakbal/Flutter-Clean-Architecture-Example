@@ -8,9 +8,8 @@ import '../../../core/exceptions/network/network_exception.dart';
 import '../../../domain/entities/movie_detail/movie_detail_entity.dart';
 import '../../../domain/entities/movie_listings/movie_listings_entity.dart';
 import '../../../domain/repositories/movie/movie_repository.dart';
-import '../../datasources/local/_collections/movie_detail_collection.dart';
-import '../../datasources/local/movie/movie_local_data_source.dart';
-import '../../datasources/remote/movie/movie_remote_data_source.dart';
+import '../../datasources/export_datasources.dart';
+import '../../datasources/local/_collections/movie_detail/movie_detail_collection.dart';
 
 class MovieRepositoryImpl implements MovieRepository {
   final MovieRemoteDataSource _movieRemoteDataSource;
