@@ -22,7 +22,7 @@ class MovieUsecases {
 
   //* LOCAL
   /// This method gets saved movie details from the local data source.
-  Future<Either<DatabaseException, void>> getSavedMovieDetails() async => _movieRepository.getSavedMovieDetails();
+  Future<Either<DatabaseException, List<MovieDetailEntity>>> getSavedMovieDetails() async => _movieRepository.getSavedMovieDetails();
 
   /// This method toggles bookmark for a movie in the local data source.
   Future<Either<DatabaseException, void>> toggleBookmark({required MovieDetailEntity movieDetailEntity}) async {
