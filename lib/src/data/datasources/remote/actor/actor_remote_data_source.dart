@@ -1,5 +1,5 @@
-import '../_models/actor_detail_model/actor_detail_model.dart';
-import '../_models/actor_social_media_model/actor_social_media_model.dart';
+import '../_models/actor_detail/actor_detail_model.dart';
+import '../_models/actor_social_media/actor_social_media_model.dart';
 
 /// Abstract class for remote data source of actor entity.
 abstract class ActorRemoteDataSource {

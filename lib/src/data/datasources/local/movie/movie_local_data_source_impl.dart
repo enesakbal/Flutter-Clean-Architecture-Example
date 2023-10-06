@@ -1,7 +1,7 @@
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
 
-import '../_collections/movie_detail_collection.dart';
+import '../_collections/movie_detail/movie_detail_collection.dart';
 import 'movie_local_data_source.dart';
 
 class MovieLocalDataSourceImpl implements MovieLocalDataSource {

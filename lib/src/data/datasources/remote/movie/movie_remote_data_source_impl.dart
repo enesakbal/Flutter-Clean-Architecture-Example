@@ -1,6 +1,6 @@
 import '../../../../core/constants/url_constants.dart';
 import '../../../../core/network/dio_client.dart';
-import '../_models/movie_listings_model/movie_listings_model.dart';
+import '../_models/movie_listings/movie_listings_model.dart';
 import 'movie_remote_data_source.dart';
 
 class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {

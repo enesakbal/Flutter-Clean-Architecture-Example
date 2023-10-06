@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:isar/isar.dart';
 
-import '../../../../domain/entities/movie_detail/movie_detail_entity.dart';
-import '../../../mappers/entity_convertable.dart';
+import '../../../../../domain/entities/movie_detail/movie_detail_entity.dart';
+import '../../../../mappers/entity_convertable.dart';
 
 part 'movie_detail_collection.g.dart';
 
