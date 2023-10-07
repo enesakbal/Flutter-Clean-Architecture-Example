@@ -9,18 +9,33 @@ part 'get_popular_movies_state.dart';
 class GetPopularMoviesCubit extends Cubit<GetPopularMoviesState> {
   GetPopularMoviesCubit(this._movieUsecases) : super(GetPopularMoviesInitial());
 
-  Future<void> getPopularMovies({required int page}) async {
-    try {
-      emit(const GetPopularMoviesLoading());
+  int _page = 1;
+  final List<MovieDetailEntity> _movieList = [];
+  bool loadMore = true;
 
-      final result = await _movieUsecases.getPopularMovies(page: page);
+  Future<void> getPopularMovies() async {
+    try {
+      if (state is! GetPopularMoviesLoaded) {
+        emit(const GetPopularMoviesLoading());
+      }
+
+      if (loadMore == false) {
+        return;
+      }
+
+      final result = await _movieUsecases.getPopularMovies(page: _page);
 
       result.fold(
-        (error) {
-          emit(GetPopularMoviesError(message: error.message));
-        },
+        (error) => emit(GetPopularMoviesError(message: error.message)),
         (success) {
-          emit(GetPopularMoviesLoaded(movies: success.movies));
+          _page++;
+          _movieList.addAll(success.movies ?? []);
+
+          if ((success.movies?.length ?? 0) < 20) {
+            loadMore = false;
+          }
+
+          emit(GetPopularMoviesLoaded(movies: List.of(_movieList)));
         },
       );
     } catch (_) {

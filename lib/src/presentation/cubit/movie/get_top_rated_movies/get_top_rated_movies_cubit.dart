@@ -9,18 +9,33 @@ part 'get_top_rated_movies_state.dart';
 class GetTopRatedMoviesCubit extends Cubit<GetTopRatedMoviesState> {
   GetTopRatedMoviesCubit(this._movieUsecases) : super(GetTopRatedMoviesInitial());
 
-  Future<void> getTopRatedMovies({required int page}) async {
-    try {
-      emit(const GetTopRatedMoviesLoading());
+  int _page = 1;
+  final List<MovieDetailEntity> _movieList = [];
+  bool loadMore = true;
 
-      final result = await _movieUsecases.getTopRatedMovies(page: page);
+  Future<void> getTopRatedMovies() async {
+    try {
+      if (state is! GetTopRatedMoviesLoaded) {
+        emit(const GetTopRatedMoviesLoading());
+      }
+
+      if (loadMore == false) {
+        return;
+      }
+
+      final result = await _movieUsecases.getTopRatedMovies(page: _page);
 
       result.fold(
-        (error) {
-          emit(GetTopRatedMoviesError(message: error.message));
-        },
+        (error) => emit(GetTopRatedMoviesError(message: error.message)),
         (success) {
-          emit(GetTopRatedMoviesLoaded(movies: success.movies));
+          _page++;
+          _movieList.addAll(success.movies ?? []);
+
+          if ((success.movies?.length ?? 0) < 20) {
+            loadMore = false;
+          }
+
+          emit(GetTopRatedMoviesLoaded(movies: List.of(_movieList)));
         },
       );
     } catch (_) {
