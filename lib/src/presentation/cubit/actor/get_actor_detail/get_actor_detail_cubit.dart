@@ -16,12 +16,8 @@ class GetActorDetailCubit extends Cubit<GetActorDetailState> {
       final result = await _actorUsecases.getActorDetail(actorId: actorId);
 
       result.fold(
-        (error) {
-          emit(GetActorDetailError(message: error.message));
-        },
-        (success) {
-          emit(GetActorDetailLoaded(actor: success));
-        },
+        (error) => emit(GetActorDetailError(message: error.message)),
+        (success) => emit(GetActorDetailLoaded(actor: success)),
       );
     } catch (_) {
       rethrow;

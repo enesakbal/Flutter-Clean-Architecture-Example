@@ -16,12 +16,8 @@ class ToggleBookmarkCubit extends Cubit<ToggleBookmarkState> {
       final result = await _movieUsecases.toggleBookmark(movieDetailEntity: movieDetailEntity);
 
       result.fold(
-        (error) {
-          emit(ToggleBookmarkError(message: error.message));
-        },
-        (success) {
-          emit(const ToggleBookmarkSuccess());
-        },
+        (error) => emit(ToggleBookmarkError(message: error.message)),
+        (success) => emit(const ToggleBookmarkSuccess()),
       );
     } catch (_) {
       rethrow;

@@ -16,12 +16,8 @@ class GetActorSocialMediaCubit extends Cubit<GetActorSocialMediaState> {
       final result = await _actorUsecases.getActorSocialMedia(actorId: actorId);
 
       result.fold(
-        (error) {
-          emit(GetActorSocialMediaError(message: error.message));
-        },
-        (success) {
-          emit(GetActorSocialMediaLoaded(data: success));
-        },
+        (error) => emit(GetActorSocialMediaError(message: error.message)),
+        (success) => emit(GetActorSocialMediaLoaded(data: success)),
       );
     } catch (_) {
       rethrow;
