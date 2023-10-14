@@ -61,22 +61,22 @@ class MovieDetailCollection with EntityConvertible<MovieDetailCollection, MovieD
   }
 
   @override
-  MovieDetailCollection fromEntity(MovieDetailEntity model) {
+  MovieDetailCollection fromEntity(MovieDetailEntity? model) {
     return MovieDetailCollection(
-      adult: model.adult,
-      backdropPath: model.backdropPath,
-      genreIds: model.genreIds,
-      id: model.id,
-      originalLanguage: model.originalLanguage,
-      originalTitle: model.originalTitle,
-      overview: model.overview,
-      popularity: model.popularity,
-      posterPath: model.posterPath,
-      releaseDate: model.releaseDate,
-      title: model.title,
-      video: model.video,
-      voteAverage: model.voteAverage,
-      voteCount: model.voteCount,
+      adult: model?.adult,
+      backdropPath: model?.backdropPath,
+      genreIds: model?.genreIds,
+      id: model?.id,
+      originalLanguage: model?.originalLanguage,
+      originalTitle: model?.originalTitle,
+      overview: model?.overview,
+      popularity: model?.popularity,
+      posterPath: model?.posterPath,
+      releaseDate: model?.releaseDate,
+      title: model?.title,
+      video: model?.video,
+      voteAverage: model?.voteAverage,
+      voteCount: model?.voteCount,
     );
   }
 }
