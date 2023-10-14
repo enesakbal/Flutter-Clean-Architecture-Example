@@ -14,12 +14,12 @@ final class GetSavedMoviesLoading extends GetSavedMoviesState {
 }
 
 final class GetSavedMoviesLoaded extends GetSavedMoviesState {
-  const GetSavedMoviesLoaded({required this.data});
+  const GetSavedMoviesLoaded({required this.movies});
 
-  final List<MovieDetailEntity>? data;
+  final List<MovieDetailEntity>? movies;
 
   @override
-  List<Object> get props => [data!];
+  List<Object> get props => [movies!];
 }
 
 final class GetSavedMoviesError extends GetSavedMoviesState {

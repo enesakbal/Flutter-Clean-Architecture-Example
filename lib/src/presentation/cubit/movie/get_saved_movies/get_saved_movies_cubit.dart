@@ -17,7 +17,7 @@ class GetSavedMoviesCubit extends Cubit<GetSavedMoviesState> {
 
       result.fold(
         (error) => emit(GetSavedMoviesError(message: error.message)),
-        (success) => emit(GetSavedMoviesLoaded(data: success)),
+        (success) => emit(GetSavedMoviesLoaded(movies: success)),
       );
     } catch (_) {
       rethrow;
