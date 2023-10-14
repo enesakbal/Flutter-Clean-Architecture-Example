@@ -53,7 +53,7 @@ class MovieRepositoryImpl implements MovieRepository {
   }
 
   @override
-  Future<Either<DatabaseException, void>> saveMovieDetails({required MovieDetailEntity movieDetailEntity}) async {
+  Future<Either<DatabaseException, void>> saveMovieDetails({required MovieDetailEntity? movieDetailEntity}) async {
     try {
       final result = await _movieLocalDataSource.saveMovieDetail(
         movieDetailCollection: MovieDetailCollection().fromEntity(movieDetailEntity),

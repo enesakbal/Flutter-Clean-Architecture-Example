@@ -22,11 +22,12 @@ class MovieUsecases {
 
   //* LOCAL
   /// This method gets saved movie details from the local data source.
-  Future<Either<DatabaseException, List<MovieDetailEntity>>> getSavedMovieDetails() async => _movieRepository.getSavedMovieDetails();
+  Future<Either<DatabaseException, List<MovieDetailEntity>>> getSavedMovieDetails() async =>
+      _movieRepository.getSavedMovieDetails();
 
   /// This method toggles bookmark for a movie in the local data source.
-  Future<Either<DatabaseException, void>> toggleBookmark({required MovieDetailEntity movieDetailEntity}) async {
-    final isSaved = await _movieRepository.isSavedMovieDetail(movieId: movieDetailEntity.id);
+  Future<Either<DatabaseException, void>> toggleBookmark({required MovieDetailEntity? movieDetailEntity}) async {
+    final isSaved = await _movieRepository.isSavedMovieDetail(movieId: movieDetailEntity?.id);
 
     return isSaved.fold(
       (error) {
@@ -34,7 +35,7 @@ class MovieUsecases {
       },
       (isSaved) {
         if (isSaved) {
-          return _movieRepository.deleteMovieDetail(movieId: movieDetailEntity.id);
+          return _movieRepository.deleteMovieDetail(movieId: movieDetailEntity?.id);
         } else {
           return _movieRepository.saveMovieDetails(movieDetailEntity: movieDetailEntity);
         }

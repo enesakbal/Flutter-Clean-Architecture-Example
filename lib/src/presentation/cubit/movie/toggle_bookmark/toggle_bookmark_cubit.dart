@@ -9,7 +9,7 @@ part 'toggle_bookmark_state.dart';
 class ToggleBookmarkCubit extends Cubit<ToggleBookmarkState> {
   ToggleBookmarkCubit(this._movieUsecases) : super(const ToggleBookmarkInitial());
 
-  Future<void> toggleBookmark({required MovieDetailEntity movieDetailEntity}) async {
+  Future<void> toggleBookmark({required MovieDetailEntity? movieDetailEntity}) async {
     try {
       emit(const ToggleBookmarkLoading());
 

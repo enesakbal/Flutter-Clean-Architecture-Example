@@ -14,7 +14,7 @@ abstract class MovieRepository {
   //* Local Data Source
   Future<Either<DatabaseException, List<MovieDetailEntity>>> getSavedMovieDetails();
 
-  Future<Either<DatabaseException, void>> saveMovieDetails({required MovieDetailEntity movieDetailEntity});
+  Future<Either<DatabaseException, void>> saveMovieDetails({required MovieDetailEntity? movieDetailEntity});
 
   Future<Either<DatabaseException, void>> deleteMovieDetail({required int? movieId});
 
