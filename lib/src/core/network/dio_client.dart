@@ -6,32 +6,22 @@ import 'package:dio_smart_retry/dio_smart_retry.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../constants/app_constants.dart';
+
 /// A class that provides a wrapper around the Dio HTTP client library.
 ///
-/// This class is responsible for creating a Dio instance with predefined options and interceptors.
-/// It provides methods for making HTTP requests with different HTTP methods (GET, POST, PUT, PATCH, DELETE).
-///
-/// Example usage:
-///
-/// ```dart
-/// final dioClient = DioClient(appConstants);
-///
-/// final response = await dioClient.get('/users');
-/// ```
-
+/// This class provides methods for making HTTP requests such as GET, POST, PUT, PATCH, and DELETE.
+/// It also sets up the base URL, headers, timeouts, response type, and interceptors for the Dio client.
 class DioClient {
   late final Dio _dio;
 
-  final AppConstants appConstants;
-
-  DioClient(this.appConstants) {
+  DioClient() {
     _dio = Dio();
 
     _dio
-      ..options.baseUrl = appConstants.baseUrl
+      ..options.baseUrl = AppConstants.baseUrl
       ..options.headers = {
         HttpHeaders.contentTypeHeader: ContentType.json.mimeType,
-        HttpHeaders.authorizationHeader: 'Bearer ${appConstants.apiToken}',
+        HttpHeaders.authorizationHeader: 'Bearer ${AppConstants.apiToken}',
       }
       ..options.connectTimeout = const Duration(milliseconds: 15000)
       ..options.receiveTimeout = const Duration(milliseconds: 15000)
