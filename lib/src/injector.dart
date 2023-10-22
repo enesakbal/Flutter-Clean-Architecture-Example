@@ -1,0 +1,31 @@
+part of '../main.dart';
+
+final injector = GetIt.instance;
+
+Future<void> init() async {
+  injector
+    //* Network
+    ..registerLazySingleton<DioClient>(() => DioClient())
+
+    //* Data Sources
+    ..registerLazySingleton<MovieRemoteDataSource>(() => MovieRemoteDataSourceImpl(injector()))
+    ..registerLazySingleton<MovieLocalDataSource>(MovieLocalDataSourceImpl.new)
+    ..registerLazySingleton<ActorRemoteDataSource>(() => ActorRemoteDataSourceImpl(injector()))
+
+    //* Repositories
+    ..registerLazySingleton<MovieRepository>(() => MovieRepositoryImpl(injector(), injector()))
+    ..registerLazySingleton<ActorRepository>(() => ActorRepositoryImpl(injector()))
+
+    //* Usecases
+    ..registerLazySingleton<MovieUsecases>(() => MovieUsecases(injector()))
+    ..registerLazySingleton<ActorUsecases>(() => ActorUsecases(injector()))
+
+    //* Cubits
+    ..registerLazySingleton<ThemeCubit>(ThemeCubit.new)
+    ..registerLazySingleton<GetPopularMoviesCubit>(() => GetPopularMoviesCubit(injector()))
+    ..registerLazySingleton<GetTopRatedMoviesCubit>(() => GetTopRatedMoviesCubit(injector()))
+    ..registerLazySingleton<GetSavedMoviesCubit>(() => GetSavedMoviesCubit(injector()))
+    ..registerFactory<ToggleBookmarkCubit>(() => ToggleBookmarkCubit(injector()))
+    ..registerLazySingleton<GetActorDetailCubit>(() => GetActorDetailCubit(injector()))
+    ..registerLazySingleton<GetActorSocialMediaCubit>(() => GetActorSocialMediaCubit(injector()));
+}
