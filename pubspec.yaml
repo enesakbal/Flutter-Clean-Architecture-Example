@@ -10,6 +10,9 @@ dependencies:
   # for routing => https://pub.dev/packages/auto_route
   auto_route: ^7.8.3
 
+  # for caching images => https://pub.dev/packages/cached_network_image
+  cached_network_image: ^3.3.0
+
   # for functional programming => https://pub.dev/packages/dartz
   dartz: ^0.10.1
 
@@ -22,6 +25,9 @@ dependencies:
   # for equality => https://pub.dev/packages/equatable
   equatable: ^2.0.5
 
+  # for theme => https://pub.dev/packages/flex_color_scheme
+  flex_color_scheme: ^7.3.1
+
   flutter:
     sdk: flutter
 
@@ -31,11 +37,17 @@ dependencies:
   # for environments => https://pub.dev/packages/flutter_dotenv
   flutter_dotenv: ^5.1.0
 
+  # for useful hooks => https://pub.dev/packages/flutter_hooks
+  flutter_hooks: ^0.20.3
+
   # for responsibility => https://pub.dev/packages/flutter_screenutil
   flutter_screenutil: ^5.9.0
 
   # for dependency injection => https://pub.dev/packages/get_it
   get_it: ^7.6.4
+
+  # for theme or locale management => https://pub.dev/packages/hydrated_bloc
+  hydrated_bloc: ^9.1.2
 
   intl: ^0.18.1
 
@@ -46,8 +58,10 @@ dependencies:
   # for creating api models => https://pub.dev/packages/json_annotation
   json_annotation: ^4.8.1
 
-  # a dio interceptor for developer => https://pub.dev/packages/pretty_dio_logger
+  # for app data directories
   path_provider: ^2.1.1
+
+  # a dio interceptor for developer => https://pub.dev/packages/pretty_dio_logger
   pretty_dio_logger: ^1.3.1
 
 dev_dependencies:
@@ -71,5 +85,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-assets: 
-      - .env
+  assets: 
+        - .env
