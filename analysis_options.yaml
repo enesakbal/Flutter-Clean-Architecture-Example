@@ -58,7 +58,6 @@ linter:
     - dangling_library_doc_comments
     - deprecated_consistency
     - directives_ordering
-    - discarded_futures # too many false positives, similar to unawaited_futures
     - do_not_use_environment # there are appropriate times to use the environment, especially in our tests and build logic
     - empty_catches
     - empty_constructor_bodies
