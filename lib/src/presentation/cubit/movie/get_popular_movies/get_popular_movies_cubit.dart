@@ -10,17 +10,18 @@ class GetPopularMoviesCubit extends Cubit<GetPopularMoviesState> {
   GetPopularMoviesCubit(this._movieUsecases) : super(GetPopularMoviesInitial());
 
   int _page = 1;
+
   final List<MovieDetailEntity> _movieList = [];
-  bool loadMore = true;
+  bool hasReachedMax = false;
 
   Future<void> getPopularMovies() async {
     try {
-      if (state is! GetPopularMoviesLoaded) {
-        emit(const GetPopularMoviesLoading());
+      if (hasReachedMax) {
+        return;
       }
 
-      if (loadMore == false) {
-        return;
+      if (state is! GetPopularMoviesLoaded) {
+        emit(const GetPopularMoviesLoading());
       }
 
       final result = await _movieUsecases.getPopularMovies(page: _page);
@@ -32,7 +33,7 @@ class GetPopularMoviesCubit extends Cubit<GetPopularMoviesState> {
           _movieList.addAll(success.movies ?? []);
 
           if ((success.movies?.length ?? 0) < 20) {
-            loadMore = false;
+            hasReachedMax = true;
           }
 
           emit(GetPopularMoviesLoaded(movies: List.of(_movieList)));

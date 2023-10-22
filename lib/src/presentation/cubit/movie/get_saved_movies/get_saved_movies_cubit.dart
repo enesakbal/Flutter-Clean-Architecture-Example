@@ -11,7 +11,9 @@ class GetSavedMoviesCubit extends Cubit<GetSavedMoviesState> {
 
   Future<void> getSavedMovieDetails() async {
     try {
-      emit(const GetSavedMoviesLoading());
+      if (state is! GetSavedMoviesLoaded) {
+        emit(const GetSavedMoviesLoading());
+      }
 
       final result = await _movieUsecases.getSavedMovieDetails();
 
