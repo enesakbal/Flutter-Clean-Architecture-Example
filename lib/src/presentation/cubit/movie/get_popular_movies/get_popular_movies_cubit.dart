@@ -30,7 +30,7 @@ class GetPopularMoviesCubit extends Cubit<GetPopularMoviesState> {
         (error) => emit(GetPopularMoviesError(message: error.message)),
         (success) {
           _page++;
-          _movieList.addAll(success.movies ?? []);
+          _movieList.addAll(success.movies?.where((movie) => _movieList.contains(movie) == false) ?? []);
 
           if ((success.movies?.length ?? 0) < 20) {
             hasReachedMax = true;
