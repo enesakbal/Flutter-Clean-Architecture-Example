@@ -17,7 +17,6 @@ class MasterView extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => GetIt.I<GetPopularMoviesCubit>()..getPopularMovies()),
         BlocProvider(create: (context) => GetIt.I<GetTopRatedMoviesCubit>()..getTopRatedMovies()),
-        BlocProvider(create: (context) => GetIt.I<GetSavedMoviesCubit>()..getSavedMovieDetails()),
       ],
       child: AutoTabsScaffold(
         resizeToAvoidBottomInset: true,

@@ -40,8 +40,11 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => injector<ThemeCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => injector<ThemeCubit>()),
+        BlocProvider(create: (context) => GetIt.I<GetSavedMoviesCubit>()..getSavedMovieDetails()),
+      ],
       child: ScreenUtilInit(
         builder: (context, child) {
           return BlocBuilder<ThemeCubit, ThemeState>(
