@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../domain/entities/export_entities.dart';
 import '../../../presentation/cubit/movie/get_saved_movies/get_saved_movies_cubit.dart';
 import '../../../presentation/cubit/movie/toggle_bookmark/toggle_bookmark_cubit.dart';
 
-class BookmarkButton extends HookWidget {
+class BookmarkButton extends StatelessWidget {
   const BookmarkButton({
     required this.movieDetailEntity,
     super.key,

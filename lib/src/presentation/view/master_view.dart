@@ -22,6 +22,7 @@ class MasterView extends StatelessWidget {
         resizeToAvoidBottomInset: true,
         lazyLoad: false,
         animationDuration: const Duration(milliseconds: 100),
+        navigatorObservers: () => [HeroController()],
         appBarBuilder: (context, tabsRouter) {
           return AppBar(
             title: Text(tabsRouter.current.title.call(context)),
