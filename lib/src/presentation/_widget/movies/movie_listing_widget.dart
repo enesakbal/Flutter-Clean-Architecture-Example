@@ -54,7 +54,14 @@ class _MovieListingWidget extends HookWidget {
             crossAxisSpacing: 5,
             mainAxisSpacing: 10,
           ),
-          itemBuilder: (_, index) => MovieCard(movie: movies?[index]),
+          itemBuilder: (_, index) {
+            final tag = UniqueKey();
+
+            return GestureDetector(
+              onTap: () => context.router.push(MovieDetailRoute(movieDetail: movies?[index], heroTag: tag)),
+              child: Hero(tag: tag, child: MovieCard(movie: movies?[index])),
+            );
+          },
         ),
         if (!hasReachedMax) const BaseIndicator(),
       ],

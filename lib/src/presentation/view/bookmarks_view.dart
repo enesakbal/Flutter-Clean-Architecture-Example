@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../config/router/app_router.gr.dart';
 import '../../core/components/indicator/base_indicator.dart';
 import '../../domain/entities/export_entities.dart';
 import '../_widget/movies/movie_card.dart';
@@ -38,6 +39,7 @@ class _BookmarksView extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 10.h),
         itemCount: movies?.length ?? 0,
         shrinkWrap: true,
+        physics: const BouncingScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           childAspectRatio: 0.7,
@@ -45,8 +47,11 @@ class _BookmarksView extends StatelessWidget {
           mainAxisSpacing: 10,
         ),
         itemBuilder: (context, index) {
-          return MovieCard(
-            movie: movies?[index],
+          final tag = UniqueKey();
+
+          return GestureDetector(
+            onTap: () => context.router.push(MovieDetailRoute(movieDetail: movies?[index], heroTag: tag)),
+            child: Hero(tag: tag, child: MovieCard(movie: movies?[index])),
           );
         },
       ),

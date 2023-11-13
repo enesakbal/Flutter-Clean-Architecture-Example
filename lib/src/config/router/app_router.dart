@@ -11,7 +11,7 @@ final class AppRouter extends $AppRouter {
   AppRouter();
 
   @override
-  List<AdaptiveRoute> get routes => [
+  List<AutoRoute> get routes => [
         AdaptiveRoute(
           page: MasterRoute.page,
           path: PathConstants.master,
@@ -28,6 +28,10 @@ final class AppRouter extends $AppRouter {
               title: (_, __) => 'Bookmarks',
             ),
           ],
+        ),
+        CustomRoute(
+          page: MovieDetailRoute.page,
+          path: PathConstants.movieDetail,
         ),
       ];
 }
