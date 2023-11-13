@@ -52,15 +52,18 @@ class MovieCard extends StatelessWidget {
                     ),
                   ),
                   ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(8),
+                      bottomRight: Radius.circular(8),
+                    ),
                     child: BackdropFilter(
                       filter: ImageFilter.blur(sigmaX: 5, sigmaY: 10),
                       child: Container(
                         alignment: Alignment.centerLeft,
                         width: 1.sw,
-                        height: 0.055.sh,
-                        padding: const EdgeInsets.all(8),
+                        height: 40.h,
+                        padding: const EdgeInsets.all(4),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
                           gradient: LinearGradient(
                             colors: [Colors.black.withOpacity(0.8), Colors.black.withOpacity(0.0)],
                             begin: Alignment.bottomCenter,
