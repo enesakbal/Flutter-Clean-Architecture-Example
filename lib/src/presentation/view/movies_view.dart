@@ -6,11 +6,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../config/router/app_router.gr.dart';
 import '../../core/components/indicator/base_indicator.dart';
 import '../../domain/entities/export_entities.dart';
 import '../_widget/movies/movie_card.dart';
-import '../cubit/movie/get_popular_movies/get_popular_movies_cubit.dart';
-import '../cubit/movie/get_top_rated_movies/get_top_rated_movies_cubit.dart';
+import '../cubit/movie/export_movie_cubits.dart';
 
 part '../_widget/movies/movie_listing_widget.dart';
 
