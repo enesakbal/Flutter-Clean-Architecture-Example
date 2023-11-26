@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 
 import '../../core/constants/path_constants.dart';
 import 'app_router.gr.dart';
@@ -32,6 +33,14 @@ final class AppRouter extends $AppRouter {
         CustomRoute(
           page: MovieDetailRoute.page,
           path: PathConstants.movieDetail,
+          durationInMilliseconds: 800,
+          reverseDurationInMilliseconds: 800,
+          transitionsBuilder: (context, animation, secondaryAnimation, child) {
+            return FadeTransition(
+              opacity: animation,
+              child: child,
+            );
+          },
         ),
       ];
 }
