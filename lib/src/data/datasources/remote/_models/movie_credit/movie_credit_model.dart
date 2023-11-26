@@ -1,13 +1,15 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../../../../../domain/entities/export_entities.dart';
+import '../../../../mappers/entity_convertable.dart';
 import 'cast_model.dart';
 import 'crew_model.dart';
 
 part 'movie_credit_model.g.dart';
 
 @JsonSerializable()
-class MovieCreditModel extends Equatable {
+class MovieCreditModel extends Equatable with EntityConvertible<MovieCreditModel, MovieCreditEntity> {
   final int? id;
   final List<CastModel>? cast;
   final List<CrewModel>? crew;
@@ -22,4 +24,11 @@ class MovieCreditModel extends Equatable {
 
   @override
   List<Object?> get props => [id, cast, crew];
+
+  @override
+  MovieCreditEntity toEntity() => MovieCreditEntity(
+        id: id,
+        cast: cast?.map((e) => e.toEntity()).toList(),
+        crew: crew?.map((e) => e.toEntity()).toList(),
+      );
 }
