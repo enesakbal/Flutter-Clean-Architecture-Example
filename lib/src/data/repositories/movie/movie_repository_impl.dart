@@ -5,8 +5,7 @@ import 'package:isar/isar.dart';
 
 import '../../../core/exceptions/database/database_exception.dart';
 import '../../../core/exceptions/network/network_exception.dart';
-import '../../../domain/entities/movie_detail/movie_detail_entity.dart';
-import '../../../domain/entities/movie_listings/movie_listings_entity.dart';
+import '../../../domain/entities/export_entities.dart';
 import '../../../domain/repositories/movie/movie_repository.dart';
 import '../../datasources/export_datasources.dart';
 import '../../datasources/local/_collections/movie_detail/movie_detail_collection.dart';
@@ -33,6 +32,17 @@ class MovieRepositoryImpl implements MovieRepository {
   Future<Either<NetworkException, MovieListingsEntity>> getTopRatedMovies({required int page}) async {
     try {
       final result = await _movieRemoteDataSource.getTopRatedMovies(page: page);
+
+      return Right(result.toEntity());
+    } on DioException catch (e) {
+      return Left(NetworkException.fromDioError(e));
+    }
+  }
+
+  @override
+  Future<Either<NetworkException, MovieCreditEntity>> getMovieCredits({required int movieId}) async {
+    try {
+      final result = await _movieRemoteDataSource.getMovieCredits(movieId: movieId);
 
       return Right(result.toEntity());
     } on DioException catch (e) {
