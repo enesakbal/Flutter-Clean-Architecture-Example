@@ -2,8 +2,7 @@ import 'package:dartz/dartz.dart';
 
 import '../../../core/exceptions/database/database_exception.dart';
 import '../../../core/exceptions/network/network_exception.dart';
-import '../../entities/movie_detail/movie_detail_entity.dart';
-import '../../entities/movie_listings/movie_listings_entity.dart';
+import '../../entities/export_entities.dart';
 import '../../repositories/movie/movie_repository.dart';
 
 class MovieUsecases {
@@ -19,6 +18,10 @@ class MovieUsecases {
   /// This method gets top rated movies from the remote data source.
   Future<Either<NetworkException, MovieListingsEntity>> getTopRatedMovies({required int page}) async =>
       _movieRepository.getTopRatedMovies(page: page);
+
+  /// Retrieves the movie credits for a given movie ID.
+  Future<Either<NetworkException, MovieCreditEntity>> getMovieCredits({required int movieId}) async =>
+    _movieRepository.getMovieCredits(movieId: movieId);
 
   //* LOCAL
   /// This method gets saved movie details from the local data source.
