@@ -4,9 +4,10 @@ import 'package:flutter/material.dart';
 import '../indicator/base_indicator.dart';
 
 class BaseNetworkImage extends StatelessWidget {
-  const BaseNetworkImage(this.url, {super.key});
+  const BaseNetworkImage(this.url, {super.key, this.hasRadius = true});
 
   final String? url;
+  final bool hasRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class BaseNetworkImage extends StatelessWidget {
       imageBuilder: (context, imageProvider) {
         return Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
+            borderRadius: hasRadius ? BorderRadius.circular(8) : null,
             image: DecorationImage(
               image: imageProvider,
               fit: BoxFit.cover,
