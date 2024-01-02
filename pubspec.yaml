@@ -64,6 +64,9 @@ dependencies:
   # a dio interceptor for developer => https://pub.dev/packages/pretty_dio_logger
   pretty_dio_logger: ^1.3.1
 
+  # for shimmer effect => https://pub.dev/packages/shimmer
+  shimmer: ^3.0.0
+
 dev_dependencies:
   # auto_route generator => https://pub.dev/packages/auto_route_generator
   auto_route_generator: ^7.3.1
