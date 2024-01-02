@@ -18,7 +18,7 @@ class ActorCard extends StatelessWidget {
     return DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.r),
-        color: Theme.of(context).primaryColorDark,
+        color: Theme.of(context).disabledColor,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
