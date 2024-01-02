@@ -18,6 +18,7 @@ import 'src/domain/repositories/movie/movie_repository.dart';
 import 'src/domain/usecases/export_usecases.dart';
 import 'src/presentation/cubit/actor/export_actor_cubits.dart';
 import 'src/presentation/cubit/movie/export_movie_cubits.dart';
+import 'src/presentation/cubit/movie/get_movie_credits/get_movie_credits_cubit.dart';
 
 part './src/injector.dart';
 
@@ -42,8 +43,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (context) => injector<ThemeCubit>()),
-        BlocProvider(create: (context) => GetIt.I<GetSavedMoviesCubit>()..getSavedMovieDetails()),
+        BlocProvider<ThemeCubit>(create: (context) => injector<ThemeCubit>()),
+        BlocProvider<GetMovieCreditsCubit>(create: (context) => injector<GetMovieCreditsCubit>()),
+        BlocProvider<GetSavedMoviesCubit>(create: (context) => injector<GetSavedMoviesCubit>()..getSavedMovieDetails()),
       ],
       child: ScreenUtilInit(
         builder: (context, child) {
