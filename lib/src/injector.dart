@@ -26,6 +26,7 @@ Future<void> init() async {
     ..registerLazySingleton<GetTopRatedMoviesCubit>(() => GetTopRatedMoviesCubit(injector()))
     ..registerLazySingleton<GetSavedMoviesCubit>(() => GetSavedMoviesCubit(injector()))
     ..registerFactory<ToggleBookmarkCubit>(() => ToggleBookmarkCubit(injector()))
+    ..registerFactory<GetMovieCreditsCubit>(() => GetMovieCreditsCubit(injector()))
     ..registerLazySingleton<GetActorDetailCubit>(() => GetActorDetailCubit(injector()))
     ..registerLazySingleton<GetActorSocialMediaCubit>(() => GetActorSocialMediaCubit(injector()));
 }
