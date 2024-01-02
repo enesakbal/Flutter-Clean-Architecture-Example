@@ -10,10 +10,10 @@ MovieCreditModel _$MovieCreditModelFromJson(Map<String, dynamic> json) =>
     MovieCreditModel(
       id: json['id'] as int?,
       cast: (json['cast'] as List<dynamic>?)
-          ?.map((e) => Cast.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CastModel.fromJson(e as Map<String, dynamic>))
           .toList(),
       crew: (json['crew'] as List<dynamic>?)
-          ?.map((e) => Crew.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CrewModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

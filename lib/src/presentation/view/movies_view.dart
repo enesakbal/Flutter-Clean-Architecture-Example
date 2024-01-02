@@ -29,7 +29,7 @@ class MoviesView extends HookWidget {
           controller: tabbarController,
           tabs: const [
             Tab(text: 'Popular'),
-            Tab(text: 'Upcoming'),
+            Tab(text: 'Top Rated'),
           ],
         ),
       ),
