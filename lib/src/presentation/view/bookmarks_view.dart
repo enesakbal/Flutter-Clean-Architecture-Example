@@ -35,26 +35,37 @@ class _BookmarksView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GridView.builder(
-        padding: EdgeInsets.symmetric(vertical: 10.h),
-        itemCount: movies?.length ?? 0,
-        shrinkWrap: true,
-        physics: const BouncingScrollPhysics(),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          childAspectRatio: 0.7,
-          crossAxisSpacing: 5,
-          mainAxisSpacing: 10,
-        ),
-        itemBuilder: (context, index) {
-          final tag = UniqueKey();
-
-          return GestureDetector(
-            onTap: () => context.router.push(MovieDetailRoute(movieDetail: movies?[index], heroTag: tag)),
-            child: Hero(tag: tag, child: MovieCard(movie: movies?[index])),
+      body: Builder(builder: (context) {
+        if (movies?.isEmpty ?? true) {
+          return Center(
+            child: Text(
+              'There is no bookmarked movie yet.',
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
           );
-        },
-      ),
+        }
+
+        return GridView.builder(
+          padding: EdgeInsets.symmetric(vertical: 10.h),
+          itemCount: movies?.length ?? 0,
+          shrinkWrap: true,
+          physics: const BouncingScrollPhysics(),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            childAspectRatio: 0.7,
+            crossAxisSpacing: 5,
+            mainAxisSpacing: 10,
+          ),
+          itemBuilder: (context, index) {
+            final tag = UniqueKey();
+
+            return GestureDetector(
+              onTap: () => context.router.push(MovieDetailRoute(movieDetail: movies?[index], heroTag: tag)),
+              child: Hero(tag: tag, child: MovieCard(movie: movies?[index])),
+            );
+          },
+        );
+      }),
     );
   }
 }
