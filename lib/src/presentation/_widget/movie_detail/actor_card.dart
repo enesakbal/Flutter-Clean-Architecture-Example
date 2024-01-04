@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/components/image/base_network_image.dart';
-import '../../../core/constants/image_constants.dart';
 import '../../../domain/entities/export_entities.dart';
 
 class ActorCard extends StatelessWidget {
@@ -30,8 +29,8 @@ class ActorCard extends StatelessWidget {
             ),
             child: SizedBox(
               width: 65.w,
-              child: BaseNetworkImage(
-                ImageConstants.getOriginalImagePath(posterPath: castEntity?.profilePath),
+              child: BaseNetworkImage.originalImageSize(
+                castEntity?.profilePath,
                 hasRadius: false,
               ),
             ),

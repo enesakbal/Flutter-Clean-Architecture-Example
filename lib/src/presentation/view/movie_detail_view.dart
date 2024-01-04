@@ -6,8 +6,8 @@ import 'package:get_it/get_it.dart';
 import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../core/components/buttons/bookmark_button.dart';
 import '../../core/components/image/base_network_image.dart';
-import '../../core/constants/image_constants.dart';
 import '../../core/extensions/int_extensions.dart';
 import '../../domain/entities/export_entities.dart';
 import '../_widget/movie_detail/actor_card.dart';
@@ -50,9 +50,10 @@ class _MovieDetailView extends StatelessWidget {
               expandedHeight: 500,
               collapsedHeight: kToolbarHeight,
               pinned: true,
+              actions: [BookmarkButton.filled(movieDetailEntity: movieDetail)],
               flexibleSpace: FlexibleSpaceBar(
-                background: BaseNetworkImage(
-                  ImageConstants.getOriginalImagePath(posterPath: movieDetail?.posterPath),
+                background: BaseNetworkImage.originalImageSize(
+                  movieDetail?.posterPath,
                   hasRadius: false,
                 ),
               ),
@@ -78,10 +79,10 @@ class _MovieDetailView extends StatelessWidget {
                               children: [
                                 Text(
                                   movieDetail?.title ?? '',
-                                  style: TextStyle(
-                                    fontSize: 20.sp,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge
+                                      ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20.sp),
                                 ),
                                 5.verticalSpace,
                                 SizedBox(
@@ -114,21 +115,13 @@ class _MovieDetailView extends StatelessWidget {
                             20.verticalSpace,
 
                             //* Overview
-                            Flexible(
-                              child: SingleChildScrollView(
-                                child: Text(
-                                  '${movieDetail?.overview}',
-                                ),
-                              ),
-                            ),
+                            Flexible(child: SingleChildScrollView(child: Text('${movieDetail?.overview}'))),
 
                             20.verticalSpace,
 
                             //* Backdrop
                             Flexible(
-                              child: BaseNetworkImage(
-                                ImageConstants.getOriginalImagePath(posterPath: movieDetail?.backdropPath),
-                              ),
+                              child: BaseNetworkImage.originalImageSize(movieDetail?.backdropPath),
                             ),
 
                             20.verticalSpace,
@@ -159,7 +152,7 @@ class _MovieDetailView extends StatelessWidget {
                       child: Text(
                         'Cast',
                         textAlign: TextAlign.left,
-                        style: Theme.of(context).textTheme.titleMedium,
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
                       ),
                     ),
                     SafeArea(

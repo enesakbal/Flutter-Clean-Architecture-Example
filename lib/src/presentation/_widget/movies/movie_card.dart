@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/components/buttons/bookmark_button.dart';
 import '../../../core/components/image/base_network_image.dart';
-import '../../../core/constants/image_constants.dart';
 import '../../../domain/entities/export_entities.dart';
 import '../../cubit/movie/export_movie_cubits.dart';
 
@@ -20,7 +19,7 @@ class MovieCard extends StatelessWidget {
       margin: const EdgeInsets.all(8),
       child: Stack(
         children: [
-          BaseNetworkImage(ImageConstants.getOriginalImagePath(posterPath: movie?.posterPath ?? '')),
+          BaseNetworkImage.originalImageSize(movie?.posterPath),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
