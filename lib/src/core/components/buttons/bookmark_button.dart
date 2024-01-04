@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../domain/entities/export_entities.dart';
@@ -7,12 +8,19 @@ import '../../../presentation/cubit/movie/get_saved_movies/get_saved_movies_cubi
 import '../../../presentation/cubit/movie/toggle_bookmark/toggle_bookmark_cubit.dart';
 
 class BookmarkButton extends StatelessWidget {
-  const BookmarkButton({
-    required this.movieDetailEntity,
-    super.key,
-  });
+  const BookmarkButton({super.key, required this.movieDetailEntity}) : _buttonStyle = null;
+
+  BookmarkButton.filled({super.key, required this.movieDetailEntity})
+      : _buttonStyle = ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.black.withOpacity(0.4)),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8).r)),
+          elevation: MaterialStateProperty.all<double>(1.5),
+          shadowColor: MaterialStateProperty.all<Color>(Colors.black87),
+        );
 
   final MovieDetailEntity? movieDetailEntity;
+
+  final ButtonStyle? _buttonStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +31,8 @@ class BookmarkButton extends StatelessWidget {
               getSavedMoviesState.movies?.any((element) => element.id == movieDetailEntity?.id) ?? false;
 
           return IconButton(
+            style: _buttonStyle,
+            padding: EdgeInsets.zero,
             onPressed: () async {
               await GetIt.I<ToggleBookmarkCubit>()
                   .toggleBookmark(movieDetailEntity: movieDetailEntity)
