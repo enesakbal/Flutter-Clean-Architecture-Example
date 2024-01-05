@@ -97,7 +97,7 @@ flutter:
 
   assets:
   - .env
-  - assets/
+  - assets/icons/
 
 flutter_gen:
   output: lib/src/config/gen/
