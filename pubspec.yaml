@@ -37,6 +37,9 @@ dependencies:
   # for environments => https://pub.dev/packages/flutter_dotenv
   flutter_dotenv: ^5.1.0
 
+  # for generating assets code => https://pub.dev/packages/flutter_gen
+  flutter_gen: ^5.4.0
+
   # for useful hooks => https://pub.dev/packages/flutter_hooks
   flutter_hooks: ^0.20.3
 
@@ -44,6 +47,7 @@ dependencies:
   flutter_screenutil: ^5.9.0
 
   # for dependency injection => https://pub.dev/packages/get_it
+  flutter_svg: ^2.0.9
   get_it: ^7.6.4
 
   # for theme or locale management => https://pub.dev/packages/hydrated_bloc
@@ -75,6 +79,7 @@ dev_dependencies:
   bloc_test: ^9.1.4
 
   build_runner: ^2.4.6
+  flutter_gen_runner: ^5.4.0
   flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
@@ -90,3 +95,15 @@ flutter:
 
   assets: 
         - .env
+        - assets/
+
+flutter_gen:
+  output: lib/src/config/gen/
+  inputs:
+    - assets/icons/
+    - assets/colors/
+
+  integrations:
+    flutter_svg: true
+    lottie: true
+  
