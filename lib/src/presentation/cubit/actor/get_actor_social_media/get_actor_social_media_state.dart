@@ -18,6 +18,13 @@ final class GetActorSocialMediaLoaded extends GetActorSocialMediaState {
 
   final ActorSocialMediaEntity? data;
 
+  String get instagramId => data?.instagramId ?? '';
+  String get twitterId => data?.twitterId ?? '';
+  String get facebookId => data?.facebookId ?? '';
+  String get youtubeId => data?.youtubeId ?? '';
+  String get imdbId => data?.imdbId ?? '';
+  String get tiktokId => data?.tiktokId ?? '';
+
   @override
   List<Object> get props => [data!];
 }
