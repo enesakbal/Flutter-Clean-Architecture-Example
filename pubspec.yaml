@@ -46,8 +46,10 @@ dependencies:
   # for responsibility => https://pub.dev/packages/flutter_screenutil
   flutter_screenutil: ^5.9.0
 
-  # for dependency injection => https://pub.dev/packages/get_it
+  # for svg => https://pub.dev/packages/flutter_svg
   flutter_svg: ^2.0.9
+
+  # for dependency injection => https://pub.dev/packages/get_it
   get_it: ^7.6.4
 
   # for theme or locale management => https://pub.dev/packages/hydrated_bloc
@@ -93,17 +95,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  assets: 
-        - .env
-        - assets/
+  assets:
+  - .env
+  - assets/
 
 flutter_gen:
   output: lib/src/config/gen/
   inputs:
-    - assets/icons/
-    - assets/colors/
+  - assets/icons/
 
   integrations:
     flutter_svg: true
-    lottie: true
-  
