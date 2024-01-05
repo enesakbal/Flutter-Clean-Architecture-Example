@@ -72,6 +72,7 @@ dependencies:
 
   # for shimmer effect => https://pub.dev/packages/shimmer
   shimmer: ^3.0.0
+  url_launcher: ^6.2.2
 
 dev_dependencies:
   # auto_route generator => https://pub.dev/packages/auto_route_generator
