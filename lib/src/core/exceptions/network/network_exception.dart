@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:equatable/equatable.dart';
 
@@ -49,7 +51,7 @@ class NetworkException extends Equatable implements Exception {
         break;
 
       case DioExceptionType.connectionError:
-        if (dioException.message!.contains('SocketException')) {
+        if (dioException.error.runtimeType == SocketException) {
           message = 'No Internet';
           break;
         } else {
