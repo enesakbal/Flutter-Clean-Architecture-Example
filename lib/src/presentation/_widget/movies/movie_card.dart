@@ -47,7 +47,7 @@ class MovieCard extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.centerLeft,
                     width: 1.sw,
-                    height: 40.h,
+                    height: 60,
                     padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       gradient: LinearGradient(

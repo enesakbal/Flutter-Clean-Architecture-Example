@@ -12,7 +12,7 @@ class BookmarkButton extends StatelessWidget {
 
   BookmarkButton.filled({super.key, required this.movieDetailEntity})
       : _buttonStyle = ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.black.withOpacity(0.4)),
+          backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(8).r)),
           elevation: MaterialStateProperty.all<double>(1.5),
           shadowColor: MaterialStateProperty.all<Color>(Colors.black87),

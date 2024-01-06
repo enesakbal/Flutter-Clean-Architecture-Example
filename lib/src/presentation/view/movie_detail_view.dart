@@ -166,23 +166,20 @@ class _MovieDetailView extends StatelessWidget {
                               child: SizedBox(
                                 height: 70.h,
                                 width: 1.sw,
-                                child: SizedBox(
-                                  height: 70.h,
-                                  child: ListView.separated(
-                                    scrollDirection: Axis.horizontal,
-                                    padding: const EdgeInsets.symmetric(horizontal: 12).r,
-                                    physics: const NeverScrollableScrollPhysics(),
-                                    itemBuilder: (_, __) => Container(
-                                      height: 70.h,
-                                      width: 225.w,
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(12.0),
-                                        color: Colors.white,
-                                      ),
+                                child: ListView.separated(
+                                  scrollDirection: Axis.horizontal,
+                                  padding: const EdgeInsets.symmetric(horizontal: 12).r,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemBuilder: (_, __) => Container(
+                                    height: 70.h,
+                                    width: 225.w,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(12.0),
+                                      color: Colors.white,
                                     ),
-                                    separatorBuilder: (_, __) => SizedBox(width: 30.w),
-                                    itemCount: 4,
                                   ),
+                                  separatorBuilder: (_, __) => SizedBox(width: 30.w),
+                                  itemCount: 4,
                                 ),
                               ),
                             );
