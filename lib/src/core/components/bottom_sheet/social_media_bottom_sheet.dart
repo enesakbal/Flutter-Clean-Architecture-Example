@@ -3,11 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 
-import '../../../core/components/bottom_sheet/_mixin/base_bottom_sheet_mixin.dart';
-import '../../../core/components/buttons/retry_button.dart';
-import '../../../core/components/buttons/social_button.dart';
-import '../../../core/components/indicator/base_indicator.dart';
-import '../../cubit/actor/export_actor_cubits.dart';
+import '../../../presentation/cubit/actor/export_actor_cubits.dart';
+import '../buttons/retry_button.dart';
+import '../buttons/social_button.dart';
+import '../indicator/base_indicator.dart';
+import '_mixin/base_bottom_sheet_mixin.dart';
 
 class SocialMediaBottomSheet extends StatelessWidget with BaseBottomSheetMixin {
   const SocialMediaBottomSheet({super.key, required this.actorId});

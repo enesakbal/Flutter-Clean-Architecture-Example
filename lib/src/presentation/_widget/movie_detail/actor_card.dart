@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../core/components/image/base_network_image.dart';
-import '../../../domain/entities/export_entities.dart';
-import 'social_media_bottom_sheet.dart';
+part of '../../view/movie_detail_view.dart';
 
 class ActorCard extends StatelessWidget {
   const ActorCard({

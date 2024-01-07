@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../config/router/app_router.gr.dart';
 import '../../core/components/indicator/base_indicator.dart';
 import '../../domain/entities/export_entities.dart';
-import '../_widget/movies/movie_card.dart';
+import '../../core/components/card/movie_card.dart';
 import '../cubit/movie/get_saved_movies/get_saved_movies_cubit.dart';
 
 @RoutePage()

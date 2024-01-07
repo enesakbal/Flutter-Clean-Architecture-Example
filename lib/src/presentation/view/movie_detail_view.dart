@@ -6,13 +6,14 @@ import 'package:get_it/get_it.dart';
 import 'package:intl/intl.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../core/components/bottom_sheet/social_media_bottom_sheet.dart';
 import '../../core/components/buttons/bookmark_button.dart';
 import '../../core/components/image/base_network_image.dart';
 import '../../core/extensions/int_extensions.dart';
 import '../../domain/entities/export_entities.dart';
-import '../_widget/movie_detail/actor_card.dart';
 import '../cubit/movie/get_movie_credits/get_movie_credits_cubit.dart';
 
+part '../_widget/movie_detail/actor_card.dart';
 part '../_widget/movie_detail/tag_container.dart';
 
 @RoutePage()

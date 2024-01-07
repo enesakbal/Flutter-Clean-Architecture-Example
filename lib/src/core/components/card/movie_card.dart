@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/components/buttons/bookmark_button.dart';
-import '../../../core/components/image/base_network_image.dart';
 import '../../../domain/entities/export_entities.dart';
-import '../../cubit/movie/export_movie_cubits.dart';
+import '../../../presentation/cubit/movie/export_movie_cubits.dart';
+import '../buttons/bookmark_button.dart';
+import '../image/base_network_image.dart';
 
 class MovieCard extends StatelessWidget {
   const MovieCard({super.key, this.movie});
