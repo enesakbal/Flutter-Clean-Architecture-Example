@@ -27,11 +27,6 @@ class MasterView extends StatelessWidget {
           return AppBar(
             title: Text(tabsRouter.current.title.call(context)),
             actions: [
-              // // AnimatedIcon(icon: animated, progress: progress)
-              // Switch(
-              //   value: false,
-              //   onChanged: (value) {},
-              // )
               IconButton(
                 onPressed: () => context.read<ThemeCubit>().toggleTheme(brightness: Theme.of(context).brightness),
                 icon: Icon(

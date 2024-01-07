@@ -52,7 +52,7 @@ class NetworkException extends Equatable implements Exception {
 
       case DioExceptionType.connectionError:
         if (dioException.error.runtimeType == SocketException) {
-          message = 'No Internet';
+          message = 'Please check your internet connection';
           break;
         } else {
           message = 'Unexpected error occurred';

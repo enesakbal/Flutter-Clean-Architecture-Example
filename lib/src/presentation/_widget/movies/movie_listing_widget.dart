@@ -21,7 +21,6 @@ class _MovieListingWidget extends HookWidget {
         final isBottom = scrollController.position.maxScrollExtent == scrollController.offset &&
             scrollController.position.pixels == scrollController.position.maxScrollExtent;
 
-        log('isBottom: $isBottom');
         if (isBottom) {
           whenScrollBottom.call();
         }
