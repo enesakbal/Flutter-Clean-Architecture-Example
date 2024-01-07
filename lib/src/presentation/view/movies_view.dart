@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +5,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../config/router/app_router.gr.dart';
+import '../../core/components/buttons/retry_button.dart';
 import '../../core/components/indicator/base_indicator.dart';
 import '../../domain/entities/export_entities.dart';
 import '../_widget/movies/movie_card.dart';
@@ -39,6 +38,16 @@ class MoviesView extends HookWidget {
         children: [
           BlocBuilder<GetPopularMoviesCubit, GetPopularMoviesState>(
             builder: (context, getPopularMoviesState) {
+              if (getPopularMoviesState is GetPopularMoviesError) {
+                return Padding(
+                  padding: const EdgeInsets.all(12).r,
+                  child: RetryButton(
+                    text: getPopularMoviesState.message,
+                    retryAction: context.read<GetPopularMoviesCubit>().getPopularMovies,
+                  ),
+                );
+              }
+
               if (getPopularMoviesState is GetPopularMoviesLoaded) {
                 return _MovieListingWidget(
                   hasReachedMax: context.watch<GetPopularMoviesCubit>().hasReachedMax,
@@ -52,6 +61,16 @@ class MoviesView extends HookWidget {
           ),
           BlocBuilder<GetTopRatedMoviesCubit, GetTopRatedMoviesState>(
             builder: (context, getTopRatedMoviesState) {
+              if (getTopRatedMoviesState is GetTopRatedMoviesError) {
+                return Padding(
+                  padding: const EdgeInsets.all(12).r,
+                  child: RetryButton(
+                    text: getTopRatedMoviesState.message,
+                    retryAction: context.read<GetTopRatedMoviesCubit>().getTopRatedMovies,
+                  ),
+                );
+              }
+
               if (getTopRatedMoviesState is GetTopRatedMoviesLoaded) {
                 return _MovieListingWidget(
                   hasReachedMax: context.watch<GetTopRatedMoviesCubit>().hasReachedMax,

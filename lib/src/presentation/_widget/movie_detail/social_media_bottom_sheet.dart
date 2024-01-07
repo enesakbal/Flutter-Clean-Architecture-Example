@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../core/components/bottom_sheet/_mixin/base_bottom_sheet_mixin.dart';
+import '../../../core/components/buttons/retry_button.dart';
 import '../../../core/components/buttons/social_button.dart';
 import '../../../core/components/indicator/base_indicator.dart';
 import '../../cubit/actor/export_actor_cubits.dart';
@@ -17,23 +18,32 @@ class SocialMediaBottomSheet extends StatelessWidget with BaseBottomSheetMixin {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetIt.I<GetActorSocialMediaCubit>()..getActorSocialMedia(actorId: actorId ?? '0'),
-      child: const _SocialMediaBottomSheet(),
+      child: _SocialMediaBottomSheet(actorId ?? '0'),
     );
   }
 }
 
 class _SocialMediaBottomSheet extends StatelessWidget {
-  const _SocialMediaBottomSheet();
+  const _SocialMediaBottomSheet(this.actorId);
+  final String actorId;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: SizedBox(
         width: 1.sw,
-        height: 0.2.sh,
+        height: 0.25.sh,
         child: BlocBuilder<GetActorSocialMediaCubit, GetActorSocialMediaState>(
           builder: (context, state) {
+            if (state is GetActorSocialMediaError) {
+              return RetryButton(
+                text: state.message,
+                retryAction: () => context.read<GetActorSocialMediaCubit>().getActorSocialMedia(actorId: actorId),
+              );
+            }
+
             if (state is! GetActorSocialMediaLoaded) return const BaseIndicator();
+
             final list = [
               state.instagramId,
               state.twitterId,
@@ -47,14 +57,26 @@ class _SocialMediaBottomSheet extends StatelessWidget {
               return const Center(child: Text('Social media account not found'));
             }
 
-            return Row(
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (list[0] != null) Expanded(child: SocialButton.instagram(id: state.instagramId)),
-                if (list[1] != null) Expanded(child: SocialButton.twitter(id: state.twitterId)),
-                if (list[2] != null) Expanded(child: SocialButton.facebook(id: state.facebookId)),
-                if (list[3] != null) Expanded(child: SocialButton.youtube(id: state.youtubeId)),
-                if (list[4] != null) Expanded(child: SocialButton.imdb(id: state.imdbId)),
-                if (list[5] != null) Expanded(child: SocialButton.tiktok(id: state.tiktokId)),
+                Text(
+                  'Social Media Accounts',
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                const Divider(),
+                Expanded(
+                  child: Row(
+                    children: [
+                      if (list[0] != null) Expanded(child: SocialButton.instagram(id: state.instagramId)),
+                      if (list[1] != null) Expanded(child: SocialButton.twitter(id: state.twitterId)),
+                      if (list[2] != null) Expanded(child: SocialButton.facebook(id: state.facebookId)),
+                      if (list[3] != null) Expanded(child: SocialButton.youtube(id: state.youtubeId)),
+                      if (list[4] != null) Expanded(child: SocialButton.imdb(id: state.imdbId)),
+                      if (list[5] != null) Expanded(child: SocialButton.tiktok(id: state.tiktokId)),
+                    ],
+                  ),
+                ),
               ],
             );
           },
