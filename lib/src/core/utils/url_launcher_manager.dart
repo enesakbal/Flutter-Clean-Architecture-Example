@@ -14,60 +14,36 @@ class UrlLauncherManager {
   static Future<void> redirectToInstagramById(String? id) async {
     final url = 'https://www.instagram.com/$id';
 
-    if (await canLaunchUrlString(url)) {
-      await launchUrlString(url);
-    } else {
-      log('Could not launch $url');
-    }
+    await redirectUrl(url);
   }
 
   static Future<void> redirectToTwitterById(String? id) async {
     final url = 'https://twitter.com/$id';
 
-    if (await canLaunchUrlString(url)) {
-      await launchUrlString(url);
-    } else {
-      log('Could not launch $url');
-    }
+    await redirectUrl(url);
   }
 
   static Future<void> redirectToFacebookById(String? id) async {
     final url = 'https://www.facebook.com/$id';
 
-    if (await canLaunchUrlString(url)) {
-      await launchUrlString(url);
-    } else {
-      log('Could not launch $url');
-    }
+    await redirectUrl(url);
   }
 
   static Future<void> redirectToYoutubeById(String? id) async {
     final url = 'https://www.youtube.com/channel/$id';
 
-    if (await canLaunchUrlString(url)) {
-      await launchUrlString(url);
-    } else {
-      log('Could not launch $url');
-    }
+    await redirectUrl(url);
   }
 
   static Future<void> redirectToImdbById(String? id) async {
     final url = 'https://www.imdb.com/name/$id';
 
-    if (await canLaunchUrlString(url)) {
-      await launchUrlString(url);
-    } else {
-      log('Could not launch $url');
-    }
+    await redirectUrl(url);
   }
 
   static Future<void> redirectToTiktokById(String? id) async {
     final url = 'https://www.tiktok.com/@$id';
 
-    if (await canLaunchUrlString(url)) {
-      await launchUrlString(url);
-    } else {
-      log('Could not launch $url');
-    }
+    await redirectUrl(url);
   }
 }
