@@ -1,10 +1,7 @@
 part of '../../view/movie_detail_view.dart';
 
-class ActorCard extends StatelessWidget {
-  const ActorCard({
-    super.key,
-    required this.castEntity,
-  });
+class _ActorCard extends StatelessWidget {
+  const _ActorCard({required this.castEntity});
 
   final CastEntity? castEntity;
 

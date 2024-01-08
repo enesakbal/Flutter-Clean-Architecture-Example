@@ -139,7 +139,7 @@ class _MovieDetailView extends StatelessWidget {
                         itemCount: movieDetail?.genreIds?.length ?? 0,
                         padding: const EdgeInsets.symmetric(horizontal: 12).r,
                         itemBuilder: (context, index) {
-                          return TagContainer('${movieDetail?.genreIds?[index].getGenreFromNumber()}');
+                          return _TagContainer('${movieDetail?.genreIds?[index].getGenreFromNumber()}');
                         },
                         separatorBuilder: (context, index) => 10.horizontalSpace,
                       ),
@@ -194,7 +194,7 @@ class _MovieDetailView extends StatelessWidget {
                               itemBuilder: (_, index) => SizedBox(
                                 height: 70.h,
                                 width: 225.w,
-                                child: ActorCard(castEntity: state.movieCreditEntity.cast?[index]),
+                                child: _ActorCard(castEntity: state.movieCreditEntity.cast?[index]),
                               ),
                               separatorBuilder: (_, __) => SizedBox(width: 30.w),
                               itemCount: state.movieCreditEntity.cast?.length ?? 0,

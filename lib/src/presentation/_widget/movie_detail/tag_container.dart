@@ -1,7 +1,7 @@
 part of '../../view/movie_detail_view.dart';
 
-class TagContainer extends StatelessWidget {
-  const TagContainer(this.tag, {super.key});
+class _TagContainer extends StatelessWidget {
+  const _TagContainer(this.tag);
 
   final String tag;
 
