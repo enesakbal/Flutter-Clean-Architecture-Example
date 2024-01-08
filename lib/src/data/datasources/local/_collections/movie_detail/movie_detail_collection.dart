@@ -2,7 +2,7 @@
 import 'package:isar/isar.dart';
 
 import '../../../../../domain/entities/movie_detail/movie_detail_entity.dart';
-import '../../../../mappers/entity_convertable.dart';
+import '../../../_mappers/entity_convertable.dart';
 
 part 'movie_detail_collection.g.dart';
 

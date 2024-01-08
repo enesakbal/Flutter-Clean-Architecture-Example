@@ -1,9 +1,8 @@
-import '../_models/actor_detail/actor_detail_model.dart';
-import '../_models/actor_social_media/actor_social_media_model.dart';
+import '../../../models/actor_detail/actor_detail_model.dart';
+import '../../../models/actor_social_media/actor_social_media_model.dart';
 
 /// Abstract class for remote data source of actor entity.
 abstract class ActorRemoteDataSource {
-  
   /// Returns the actor detail model for the given actor id.
   Future<ActorDetailModel> getActorDetail({required String actorId});
 

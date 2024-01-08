@@ -1,7 +1,7 @@
 import '../../../../core/constants/url_constants.dart';
 import '../../../../core/network/dio_client.dart';
-import '../_models/actor_detail/actor_detail_model.dart';
-import '../_models/actor_social_media/actor_social_media_model.dart';
+import '../../../models/actor_detail/actor_detail_model.dart';
+import '../../../models/actor_social_media/actor_social_media_model.dart';
 import 'actor_remote_data_source.dart';
 
 class ActorRemoteDataSourceImpl implements ActorRemoteDataSource {

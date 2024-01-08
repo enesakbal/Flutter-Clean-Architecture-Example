@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../../domain/entities/export_entities.dart';
-import '../../../../mappers/entity_convertable.dart';
+import '../../../domain/entities/export_entities.dart';
+import '../../datasources/_mappers/entity_convertable.dart';
 import 'cast_model.dart';
 import 'crew_model.dart';
 

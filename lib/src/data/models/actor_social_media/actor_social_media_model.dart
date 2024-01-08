@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../../domain/entities/actor_social_media/actor_social_medias_entity.dart';
-import '../../../../mappers/entity_convertable.dart';
+import '../../../domain/entities/actor_social_media/actor_social_medias_entity.dart';
+import '../../datasources/_mappers/entity_convertable.dart';
 
 part 'actor_social_media_model.g.dart';
 

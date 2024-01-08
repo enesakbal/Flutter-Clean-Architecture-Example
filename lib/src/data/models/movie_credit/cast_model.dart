@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../../domain/entities/movie_credit_entity/cast_entity.dart';
-import '../../../../mappers/entity_convertable.dart';
+import '../../../domain/entities/movie_credit_entity/cast_entity.dart';
+import '../../datasources/_mappers/entity_convertable.dart';
 
 part 'cast_model.g.dart';
 

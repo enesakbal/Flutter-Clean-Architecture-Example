@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../../../domain/entities/movie_listings/movie_listings_entity.dart';
-import '../../../../mappers/entity_convertable.dart';
+import '../../../domain/entities/movie_listings/movie_listings_entity.dart';
+import '../../datasources/_mappers/entity_convertable.dart';
 import '../movie_detail/movie_detail_model.dart';
 
 part 'movie_listings_model.g.dart';
