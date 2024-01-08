@@ -11,10 +11,12 @@ class ActorUsecases {
   const ActorUsecases(this._actorRepository);
 
   /// This method gets actor detail from the remote data source.
-  Future<Either<NetworkException, ActorDetailEntity>> getActorDetail({required String actorId}) async =>
-      _actorRepository.getActorDetail(actorId: actorId);
+  Future<Either<NetworkException, ActorDetailEntity>> getActorDetail({required String actorId}) async {
+    return _actorRepository.getActorDetail(actorId: actorId);
+  }
 
   /// This method gets actor social media from the remote data source.
-  Future<Either<NetworkException, ActorSocialMediaEntity>> getActorSocialMedia({required String actorId}) async =>
-      _actorRepository.getActorSocialMedia(actorId: actorId);
+  Future<Either<NetworkException, ActorSocialMediaEntity>> getActorSocialMedia({required String actorId}) async {
+    return _actorRepository.getActorSocialMedia(actorId: actorId);
+  }
 }

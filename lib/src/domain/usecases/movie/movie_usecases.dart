@@ -12,21 +12,25 @@ class MovieUsecases {
 
   //* REMOTE
   /// This method gets popular movies from the remote data source.
-  Future<Either<NetworkException, MovieListingsEntity>> getPopularMovies({required int page}) async =>
-      _movieRepository.getPopularMovies(page: page);
+  Future<Either<NetworkException, MovieListingsEntity>> getPopularMovies({required int page}) async {
+    return _movieRepository.getPopularMovies(page: page);
+  }
 
   /// This method gets top rated movies from the remote data source.
-  Future<Either<NetworkException, MovieListingsEntity>> getTopRatedMovies({required int page}) async =>
-      _movieRepository.getTopRatedMovies(page: page);
+  Future<Either<NetworkException, MovieListingsEntity>> getTopRatedMovies({required int page}) async {
+    return _movieRepository.getTopRatedMovies(page: page);
+  }
 
   /// Retrieves the movie credits for a given movie ID.
-  Future<Either<NetworkException, MovieCreditEntity>> getMovieCredits({required int movieId}) async =>
-    _movieRepository.getMovieCredits(movieId: movieId);
+  Future<Either<NetworkException, MovieCreditEntity>> getMovieCredits({required int movieId}) async {
+    return _movieRepository.getMovieCredits(movieId: movieId);
+  }
 
   //* LOCAL
   /// This method gets saved movie details from the local data source.
-  Future<Either<DatabaseException, List<MovieDetailEntity>>> getSavedMovieDetails() async =>
-      _movieRepository.getSavedMovieDetails();
+  Future<Either<DatabaseException, List<MovieDetailEntity>>> getSavedMovieDetails() async {
+    return _movieRepository.getSavedMovieDetails();
+  }
 
   /// This method toggles bookmark for a movie in the local data source.
   Future<Either<DatabaseException, void>> toggleBookmark({required MovieDetailEntity? movieDetailEntity}) async {
