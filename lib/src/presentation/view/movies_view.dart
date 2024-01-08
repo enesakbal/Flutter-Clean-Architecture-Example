@@ -6,9 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../config/router/app_router.gr.dart';
 import '../../core/components/buttons/retry_button.dart';
+import '../../core/components/card/movie_card.dart';
 import '../../core/components/indicator/base_indicator.dart';
 import '../../domain/entities/export_entities.dart';
-import '../../core/components/card/movie_card.dart';
 import '../cubit/movie/export_movie_cubits.dart';
 
 part '../_widget/movies/movie_listing_widget.dart';
