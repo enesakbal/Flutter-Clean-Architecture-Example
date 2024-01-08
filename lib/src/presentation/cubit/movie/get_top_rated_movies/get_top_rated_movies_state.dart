@@ -16,10 +16,10 @@ final class GetTopRatedMoviesLoading extends GetTopRatedMoviesState {
 final class GetTopRatedMoviesLoaded extends GetTopRatedMoviesState {
   const GetTopRatedMoviesLoaded({required this.movies});
 
-  final List<MovieDetailEntity>? movies;
+  final List<MovieDetailEntity> movies;
 
   @override
-  List<Object> get props => [movies!];
+  List<Object> get props => [movies];
 }
 
 final class GetTopRatedMoviesError extends GetTopRatedMoviesState {

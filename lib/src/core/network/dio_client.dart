@@ -7,6 +7,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../constants/app_constants.dart';
 
+
 /// A class that provides a wrapper around the Dio HTTP client library.
 ///
 /// This class provides methods for making HTTP requests such as GET, POST, PUT, PATCH, and DELETE.

@@ -16,10 +16,10 @@ final class GetPopularMoviesLoading extends GetPopularMoviesState {
 final class GetPopularMoviesLoaded extends GetPopularMoviesState {
   const GetPopularMoviesLoaded({required this.movies});
 
-  final List<MovieDetailEntity>? movies;
+  final List<MovieDetailEntity> movies;
 
   @override
-  List<Object> get props => [movies!];
+  List<Object> get props => [movies];
 }
 
 final class GetPopularMoviesError extends GetPopularMoviesState {
