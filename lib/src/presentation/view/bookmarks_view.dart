@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../config/router/app_router.gr.dart';
+import '../../core/components/buttons/retry_button.dart';
 import '../../core/components/card/movie_card.dart';
 import '../../core/components/indicator/base_indicator.dart';
 import '../../domain/entities/export_entities.dart';
@@ -17,11 +18,17 @@ class BookmarksView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GetSavedMoviesCubit, GetSavedMoviesState>(
       builder: (_, getSavedMoviesState) {
-        if (getSavedMoviesState is GetSavedMoviesLoaded) {
-          return _BookmarksView(getSavedMoviesState.movies);
-        }
-
-        return const BaseIndicator();
+        return switch (getSavedMoviesState) {
+          GetSavedMoviesLoaded() => _BookmarksView(getSavedMoviesState.movies),
+          GetSavedMoviesError() => Padding(
+              padding: const EdgeInsets.all(12).r,
+              child: RetryButton(
+                retryAction: () => context.read<GetSavedMoviesCubit>().getSavedMovieDetails(),
+                text: getSavedMoviesState.message,
+              ),
+            ),
+          _ => const BaseIndicator(),
+        };
       },
     );
   }
