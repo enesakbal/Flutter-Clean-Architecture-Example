@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:fpdart/fpdart.dart';
 
 import '../../../core/exceptions/network/network_exception.dart';
 import '../../entities/actor_detail/actor_detail_entity.dart';
