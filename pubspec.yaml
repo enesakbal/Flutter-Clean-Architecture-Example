@@ -13,14 +13,8 @@ dependencies:
   # for caching images => https://pub.dev/packages/cached_network_image
   cached_network_image: ^3.3.0
 
-  # for functional programming => https://pub.dev/packages/dartz
-  dartz: ^0.10.1
-
   # for network requests => https://pub.dev/packages/dio
   dio: ^5.3.3
-
-  # a dio interceptor for retry requests => https://pub.dev/packages/dio_smart_retry
-  dio_smart_retry: ^6.0.0
 
   # for equality => https://pub.dev/packages/equatable
   equatable: ^2.0.5
@@ -49,8 +43,12 @@ dependencies:
   # for svg => https://pub.dev/packages/flutter_svg
   flutter_svg: ^2.0.9
 
+  # for functional programming => https://pub.dev/packages/fpdart
+  fpdart: ^1.1.0
+
   # for dependency injection => https://pub.dev/packages/get_it
   get_it: ^7.6.4
+
 
   # for theme or locale management => https://pub.dev/packages/hydrated_bloc
   hydrated_bloc: ^9.1.2

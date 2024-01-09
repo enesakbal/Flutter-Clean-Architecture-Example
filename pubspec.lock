@@ -249,14 +249,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  dartz:
-    dependency: "direct main"
-    description:
-      name: dartz
-      sha256: e6acf34ad2e31b1eb00948692468c30ab48ac8250e0f0df661e29f12dd252168
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.10.1"
   diff_match_patch:
     dependency: transitive
     description:
@@ -273,14 +265,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.4.0"
-  dio_smart_retry:
-    dependency: "direct main"
-    description:
-      name: dio_smart_retry
-      sha256: "3d71450c19b4d91ef4c7d726a55a284bfc11eb3634f1f25006cdfab3f8595653"
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.0.0"
   equatable:
     dependency: "direct main"
     description:
@@ -432,6 +416,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  fpdart:
+    dependency: "direct main"
+    description:
+      name: fpdart
+      sha256: "7413acc5a6569a3fe8277928fc7487f3198530f0c4e635d0baef199ea36e8ee9"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.0"
   frontend_server_client:
     dependency: transitive
     description:
