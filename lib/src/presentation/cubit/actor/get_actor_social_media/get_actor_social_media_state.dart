@@ -16,17 +16,17 @@ final class GetActorSocialMediaLoading extends GetActorSocialMediaState {
 final class GetActorSocialMediaLoaded extends GetActorSocialMediaState {
   const GetActorSocialMediaLoaded({required this.data});
 
-  final ActorSocialMediaEntity? data;
+  final ActorSocialMediaEntity data;
 
-  String? get instagramId => data?.instagramId;
-  String? get twitterId => data?.twitterId;
-  String? get facebookId => data?.facebookId;
-  String? get youtubeId => data?.youtubeId;
-  String? get imdbId => data?.imdbId;
-  String? get tiktokId => data?.tiktokId;
+  String? get instagramId => data.instagramId;
+  String? get twitterId => data.twitterId;
+  String? get facebookId => data.facebookId;
+  String? get youtubeId => data.youtubeId;
+  String? get imdbId => data.imdbId;
+  String? get tiktokId => data.tiktokId;
 
   @override
-  List<Object> get props => [data!];
+  List<Object> get props => [data];
 }
 
 final class GetActorSocialMediaError extends GetActorSocialMediaState {

@@ -15,7 +15,7 @@ class GetMovieCreditsCubit extends Cubit<GetMovieCreditsState> {
     final result = await _movieUsecases.getMovieCredits(movieId: movieId);
 
     result.fold(
-      (failure) => emit(const GetMovieCreditsError()),
+      (error) => emit(GetMovieCreditsError(error.message)),
       (movieCreditEntity) => emit(GetMovieCreditsLoaded(movieCreditEntity)),
     );
   }

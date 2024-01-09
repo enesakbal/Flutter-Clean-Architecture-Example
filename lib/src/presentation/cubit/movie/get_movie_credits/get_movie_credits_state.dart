@@ -25,5 +25,10 @@ final class GetMovieCreditsLoaded extends GetMovieCreditsState {
 }
 
 final class GetMovieCreditsError extends GetMovieCreditsState {
-  const GetMovieCreditsError();
+  const GetMovieCreditsError(this.message);
+
+  final String message;
+
+  @override
+  List<Object> get props => [message];
 }

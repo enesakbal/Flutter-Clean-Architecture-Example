@@ -16,10 +16,10 @@ final class GetActorDetailLoading extends GetActorDetailState {
 final class GetActorDetailLoaded extends GetActorDetailState {
   const GetActorDetailLoaded({required this.actor});
 
-  final ActorDetailEntity? actor;
+  final ActorDetailEntity actor;
 
   @override
-  List<Object> get props => [actor!];
+  List<Object> get props => [actor];
 }
 
 final class GetActorDetailError extends GetActorDetailState {
