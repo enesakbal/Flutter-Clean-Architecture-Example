@@ -49,7 +49,6 @@ dependencies:
   # for dependency injection => https://pub.dev/packages/get_it
   get_it: ^7.6.4
 
-
   # for theme or locale management => https://pub.dev/packages/hydrated_bloc
   hydrated_bloc: ^9.1.2
 
@@ -70,6 +69,8 @@ dependencies:
 
   # for shimmer effect => https://pub.dev/packages/shimmer
   shimmer: ^3.0.0
+
+  # for url launcher => https://pub.dev/packages/url_launcher
   url_launcher: ^6.2.2
 
 dev_dependencies:
