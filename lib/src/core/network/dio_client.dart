@@ -32,17 +32,6 @@ class DioClient {
           compact: false,
           logPrint: (object) => log(object.toString(), name: 'TMDB API'),
         ),
-      )
-      ..interceptors.add(
-        RetryInterceptor(
-          dio: _dio,
-          logPrint: log,
-          retryDelays: const [
-            Duration(seconds: 2),
-            Duration(seconds: 5),
-            Duration(seconds: 12),
-          ],
-        ),
       );
   }
 
