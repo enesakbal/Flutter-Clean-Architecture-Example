@@ -8,7 +8,10 @@ class _ActorCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () async => SocialMediaBottomSheet(actorId: castEntity?.id?.toString()).show(context),
+      onTap: () async => SocialMediaBottomSheet(
+        actorId: castEntity?.id?.toString(),
+        actorName: castEntity?.name,
+      ).show(context),
       borderRadius: BorderRadius.circular(12.r),
       child: DecoratedBox(
         decoration: BoxDecoration(

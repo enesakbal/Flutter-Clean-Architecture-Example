@@ -10,22 +10,24 @@ import '../indicator/base_indicator.dart';
 import '_mixin/base_bottom_sheet_mixin.dart';
 
 class SocialMediaBottomSheet extends StatelessWidget with BaseBottomSheetMixin {
-  const SocialMediaBottomSheet({super.key, required this.actorId});
+  const SocialMediaBottomSheet({super.key, required this.actorId, required this.actorName});
 
   final String? actorId;
+  final String? actorName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GetIt.I<GetActorSocialMediaCubit>()..getActorSocialMedia(actorId: actorId ?? '0'),
-      child: _SocialMediaBottomSheet(actorId ?? '0'),
+      child: _SocialMediaBottomSheet(actorId ?? '0', actorName: actorName),
     );
   }
 }
 
 class _SocialMediaBottomSheet extends StatelessWidget {
-  const _SocialMediaBottomSheet(this.actorId);
+  const _SocialMediaBottomSheet(this.actorId, {required this.actorName});
   final String actorId;
+  final String? actorName;
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +63,7 @@ class _SocialMediaBottomSheet extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Social Media Accounts',
+                  "$actorName's social accounts",
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 const Divider(),
