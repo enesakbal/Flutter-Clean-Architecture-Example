@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import '../../../domain/entities/movie_credit_entity/crew_entity.dart';
+import '../../../domain/entities/movie_credit/crew_entity.dart';
 import '../../datasources/_mappers/entity_convertable.dart';
 
 part 'crew_model.g.dart';
