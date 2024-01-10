@@ -11,23 +11,23 @@ import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
   late MockDioClient mockDioClient;
-  late final MovieRemoteDataSourceImpl dataSource;
+  late final MovieRemoteDataSourceImpl actorRemoteDataSource;
 
-  late final MovieListingsModel movieListingsModel;
-  late final MovieCreditModel movieCreditModel;
+  late final MovieListingsModel tMovieListingsModel;
+  late final MovieCreditModel tMovieCreditModel;
 
   late final dynamic movieListingsJson;
   late final dynamic movieCreditJson;
 
   setUpAll(() {
     mockDioClient = MockDioClient();
-    dataSource = MovieRemoteDataSourceImpl(mockDioClient);
+    actorRemoteDataSource = MovieRemoteDataSourceImpl(mockDioClient);
 
     movieListingsJson = jsonReader('movie_listings_dummy_data.json');
     movieCreditJson = jsonReader('movie_credit_dummy_data.json');
 
-    movieListingsModel = MovieListingsModel.fromJson(movieListingsJson as Map<String, dynamic>);
-    movieCreditModel = MovieCreditModel.fromJson(movieCreditJson as Map<String, dynamic>);
+    tMovieListingsModel = MovieListingsModel.fromJson(movieListingsJson as Map<String, dynamic>);
+    tMovieCreditModel = MovieCreditModel.fromJson(movieCreditJson as Map<String, dynamic>);
   });
 
   //* This is the test for the getPopularMovies() method
@@ -50,11 +50,11 @@ void main() {
       );
 
       // Act
-      final result = await dataSource.getPopularMovies(page: page);
+      final result = await actorRemoteDataSource.getPopularMovies(page: page);
 
       // Assert
       expect(result, isA<MovieListingsModel>());
-      expect(result, equals(movieListingsModel));
+      expect(result, equals(tMovieListingsModel));
     });
 
     test('should throw an [Exception()] when the call is unsuccessful', () async {
@@ -62,10 +62,10 @@ void main() {
       when(mockDioClient.get(UrlConstants.popularMovies, queryParameters: {'page': page})).thenThrow(Exception());
 
       // Act
-      final call = dataSource.getPopularMovies(page: page);
+      final call = actorRemoteDataSource.getPopularMovies;
 
       // Assert
-      expect(call, throwsException);
+      expect(call(page: page), throwsException);
     });
   });
 
@@ -88,11 +88,11 @@ void main() {
       );
 
       // Act
-      final result = await dataSource.getTopRatedMovies(page: page);
+      final result = await actorRemoteDataSource.getTopRatedMovies(page: page);
 
       // Assert
       expect(result, isA<MovieListingsModel>());
-      expect(result, equals(movieListingsModel));
+      expect(result, equals(tMovieListingsModel));
     });
 
     test('should throw an [Exception()] when the call is unsuccessful', () async {
@@ -100,10 +100,10 @@ void main() {
       when(mockDioClient.get(UrlConstants.topRatedMovies, queryParameters: {'page': page})).thenThrow(Exception());
 
       // Act
-      final call = dataSource.getTopRatedMovies(page: page);
+      final call = actorRemoteDataSource.getTopRatedMovies;
 
       // Assert
-      expect(call, throwsException);
+      expect(call(page: page), throwsException);
     });
   });
 
@@ -131,11 +131,11 @@ void main() {
       ).thenAnswer((_) async => response);
 
       // Act
-      final result = await dataSource.getMovieCredits(movieId: movieId);
+      final result = await actorRemoteDataSource.getMovieCredits(movieId: movieId);
 
       // Assert
       expect(result, isA<MovieCreditModel>());
-      expect(result, equals(movieCreditModel));
+      expect(result, equals(tMovieCreditModel));
     });
 
     test('should throw an [Exception()] when the call is unsuccessful', () async {
@@ -150,10 +150,10 @@ void main() {
       ).thenThrow(exception);
 
       // Act
-      final call = dataSource.getMovieCredits(movieId: movieId);
+      final call = actorRemoteDataSource.getMovieCredits;
 
       // Assert
-      expect(call, throwsException);
+      expect(call(movieId: movieId), throwsException);
     });
   });
 }
