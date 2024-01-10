@@ -1,0 +1,396 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/r9oTasGQofvkQY5vlUXglneF64Z.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 1029575,
+      "original_language": "en",
+      "original_title": "The Family Plan",
+      "overview": "Dan Morgan is many things: a devoted husband, a loving father, a celebrated car salesman. He's also a former assassin. And when his past catches up to his present, he's forced to take his unsuspecting family on a road trip unlike any other.",
+      "popularity": 1853.509,
+      "poster_path": "/a6syn9qcU4a54Lmi3JoIr1XvhFU.jpg",
+      "release_date": "2023-12-14",
+      "title": "The Family Plan",
+      "video": false,
+      "vote_average": 7.387,
+      "vote_count": 658
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vdpE5pjJVql5aD6pnzRqlFmgxXf.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "id": 906126,
+      "original_language": "es",
+      "original_title": "La sociedad de la nieve",
+      "overview": "On October 13, 1972, Uruguayan Air Force Flight 571, chartered to take a rugby team to Chile, crashes into a glacier in the heart of the Andes.",
+      "popularity": 1284.858,
+      "poster_path": "/k7rEpZfNPB35FFHB00ZhXHKTL7X.jpg",
+      "release_date": "2023-12-13",
+      "title": "Society of the Snow",
+      "video": false,
+      "vote_average": 8.157,
+      "vote_count": 471
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/jXJxMcVoEuXzym3vFnjqDW4ifo6.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 572802,
+      "original_language": "en",
+      "original_title": "Aquaman and the Lost Kingdom",
+      "overview": "Black Manta, still driven by the need to avenge his father's death and wielding the power of the mythic Black Trident, will stop at nothing to take Aquaman down once and for all. To defeat him, Aquaman must turn to his imprisoned brother Orm, the former King of Atlantis, to forge an unlikely alliance in order to save the world from irreversible destruction.",
+      "popularity": 1183.151,
+      "poster_path": "/8xV47NDrjdZDpkVcCFqkdHa3T0C.jpg",
+      "release_date": "2023-12-20",
+      "title": "Aquaman and the Lost Kingdom",
+      "video": false,
+      "vote_average": 6.493,
+      "vote_count": 430
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/5a4JdoFwll5DRtKMe7JLuGQ9yJm.jpg",
+      "genre_ids": [
+        18,
+        878,
+        28
+      ],
+      "id": 695721,
+      "original_language": "en",
+      "original_title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "overview": "64 years before he becomes the tyrannical president of Panem, Coriolanus Snow sees a chance for a change in fortunes when he mentors Lucy Gray Baird, the female tribute from District 12.",
+      "popularity": 1179.404,
+      "poster_path": "/mBaXZ95R2OxueZhvQbcEWy2DqyO.jpg",
+      "release_date": "2023-11-15",
+      "title": "The Hunger Games: The Ballad of Songbirds & Snakes",
+      "video": false,
+      "vote_average": 7.237,
+      "vote_count": 1406
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/sRLC052ieEzkQs9dEtPMfFxYkej.jpg",
+      "genre_ids": [
+        878
+      ],
+      "id": 848326,
+      "original_language": "en",
+      "original_title": "Rebel Moon - Part One: A Child of Fire",
+      "overview": "When a peaceful colony on the edge of the galaxy finds itself threatened by the armies of the tyrannical Regent Balisarius, they dispatch Kora, a young woman with a mysterious past, to seek out warriors from neighboring planets to help them take a stand.",
+      "popularity": 1107.917,
+      "poster_path": "/ui4DrH1cKk2vkHshcUcGt2lKxCm.jpg",
+      "release_date": "2023-12-15",
+      "title": "Rebel Moon - Part One: A Child of Fire",
+      "video": false,
+      "vote_average": 6.445,
+      "vote_count": 1146
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/ktHEdqmMWC1wdfPRMRCTZe2OISL.jpg",
+      "genre_ids": [
+        27,
+        9648,
+        53
+      ],
+      "id": 1071215,
+      "original_language": "en",
+      "original_title": "Thanksgiving",
+      "overview": "After a Black Friday riot ends in tragedy, a mysterious Thanksgiving-inspired killer terrorizes Plymouth, Massachusetts - the birthplace of the holiday. Picking off residents one by one, what begins as random revenge killings are soon revealed to be part of a larger, sinister holiday plan.",
+      "popularity": 1089.91,
+      "poster_path": "/f5f3TEVst1nHHyqgn7Z3tlwnBIH.jpg",
+      "release_date": "2023-11-16",
+      "title": "Thanksgiving",
+      "video": false,
+      "vote_average": 6.717,
+      "vote_count": 473
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/X8yF6STUk5Zr5nAuLBJiio8Sxh.jpg",
+      "genre_ids": [
+        18,
+        10749
+      ],
+      "id": 1143183,
+      "original_language": "tl",
+      "original_title": "Rewind",
+      "overview": "Mary loves John for as long as she can remember. But after years of marriage, John's priorities shift, leading to a strained relationship with Mary, which causes a tragic accident that takes away Mary's life. Until one day, John gets an extraordinary proposition - to rewind time and save the life of the woman he loves.",
+      "popularity": 1064.674,
+      "poster_path": "/ru1i4ZR11lPPVArk3fOcO1VCOlD.jpg",
+      "release_date": "2023-12-25",
+      "title": "Rewind",
+      "video": false,
+      "vote_average": 6.769,
+      "vote_count": 13
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/uvqf3e451hBviQiCvPx4lapVOKf.jpg",
+      "genre_ids": [
+        27
+      ],
+      "id": 1131755,
+      "original_language": "en",
+      "original_title": "A Creature Was Stirring",
+      "overview": "A nurse taking care of her daughter's mysterious affliction struggles to hide her secrets when uninvited strangers take shelter in her house during a lethal blizzard.",
+      "popularity": 935.416,
+      "poster_path": "/ikQG3byEFyfwcnF0zmyNtXTmr5v.jpg",
+      "release_date": "2023-12-08",
+      "title": "A Creature Was Stirring",
+      "video": false,
+      "vote_average": 4.967,
+      "vote_count": 15
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/rLb2cwF3Pazuxaj0sRXQ037tGI1.jpg",
+      "genre_ids": [
+        18,
+        36
+      ],
+      "id": 872585,
+      "original_language": "en",
+      "original_title": "Oppenheimer",
+      "overview": "The story of J. Robert Oppenheimer's role in the development of the atomic bomb during World War II.",
+      "popularity": 928.194,
+      "poster_path": "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg",
+      "release_date": "2023-07-19",
+      "title": "Oppenheimer",
+      "video": false,
+      "vote_average": 8.117,
+      "vote_count": 6004
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/t5zCBSB5xMDKcDqe91qahCOUYVV.jpg",
+      "genre_ids": [
+        27,
+        9648
+      ],
+      "id": 507089,
+      "original_language": "en",
+      "original_title": "Five Nights at Freddy's",
+      "overview": "Recently fired and desperate for work, a troubled young man named Mike agrees to take a position as a night security guard at an abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon discovers that nothing at Freddy's is what it seems.",
+      "popularity": 921.654,
+      "poster_path": "/7BpNtNfxuocYEVREzVMO75hso1l.jpg",
+      "release_date": "2023-10-25",
+      "title": "Five Nights at Freddy's",
+      "video": false,
+      "vote_average": 7.754,
+      "vote_count": 3113
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/gg4zZoTggZmpAQ32qIrP5dtnkEZ.jpg",
+      "genre_ids": [
+        28,
+        80
+      ],
+      "id": 891699,
+      "original_language": "en",
+      "original_title": "Silent Night",
+      "overview": "A tormented father witnesses his young son die when caught in a gang's crossfire on Christmas Eve. While recovering from a wound that costs him his voice, he makes vengeance his life's mission and embarks on a punishing training regimen in order to avenge his son's death.",
+      "popularity": 743.541,
+      "poster_path": "/tlcuhdNMKNGEVpGqBZrAaOOf1A6.jpg",
+      "release_date": "2023-11-30",
+      "title": "Silent Night",
+      "video": false,
+      "vote_average": 5.895,
+      "vote_count": 267
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yOm993lsJyPmBodlYjgpPwBjXP9.jpg",
+      "genre_ids": [
+        35,
+        10751,
+        14
+      ],
+      "id": 787699,
+      "original_language": "en",
+      "original_title": "Wonka",
+      "overview": "Willy Wonka – chock-full of ideas and determined to change the world one delectable bite at a time – is proof that the best things in life begin with a dream, and if you’re lucky enough to meet Willy Wonka, anything is possible.",
+      "popularity": 729.122,
+      "poster_path": "/qhb1qOilapbapxWQn9jtRCMwXJF.jpg",
+      "release_date": "2023-12-06",
+      "title": "Wonka",
+      "video": false,
+      "vote_average": 7.096,
+      "vote_count": 918
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/9PqD3wSIjntyJDBzMNuxuKHwpUD.jpg",
+      "genre_ids": [
+        16,
+        35,
+        10751
+      ],
+      "id": 1075794,
+      "original_language": "en",
+      "original_title": "Leo",
+      "overview": "Jaded 74-year-old lizard Leo has been stuck in the same Florida classroom for decades with his terrarium-mate turtle. When he learns he only has one year left to live, he plans to escape to experience life on the outside but instead gets caught up in the problems of his anxious students — including an impossibly mean substitute teacher.",
+      "popularity": 659.189,
+      "poster_path": "/pD6sL4vntUOXHmuvJPPZAgvyfd9.jpg",
+      "release_date": "2023-11-17",
+      "title": "Leo",
+      "video": false,
+      "vote_average": 7.52,
+      "vote_count": 787
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/EEASOZj5Mm2u6G3K4HS4pKIlfC.jpg",
+      "genre_ids": [
+        27,
+        9648
+      ],
+      "id": 1035982,
+      "original_language": "en",
+      "original_title": "Hell House LLC Origins: The Carmichael Manor",
+      "overview": "A group of cold case investigators stay at the Carmichael Manor, site of the grisly and unsolved murders of the Carmichael family back in the eighties. After four nights, the group was never heard from again. What is discovered on their footage is even more disturbing than anything found on the Hell House tapes.",
+      "popularity": 651.819,
+      "poster_path": "/irxr1vZdpQl7Vnn8vdysnD69uba.jpg",
+      "release_date": "2023-10-24",
+      "title": "Hell House LLC Origins: The Carmichael Manor",
+      "video": false,
+      "vote_average": 6.321,
+      "vote_count": 53
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/36Lt4NXw5ucLDobs7dvJCIniXCp.jpg",
+      "genre_ids": [
+        27
+      ],
+      "id": 807172,
+      "original_language": "en",
+      "original_title": "The Exorcist: Believer",
+      "overview": "When two girls disappear into the woods and return three days later with no memory of what happened to them, the father of one girl seeks out Chris MacNeil, who's been forever altered by what happened to her daughter fifty years ago.",
+      "popularity": 602.119,
+      "poster_path": "/qVKirUdmoex8SdfUk8WDDWwrcCh.jpg",
+      "release_date": "2023-10-04",
+      "title": "The Exorcist: Believer",
+      "video": false,
+      "vote_average": 6.141,
+      "vote_count": 736
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/k1KrbaCMACQiq7EA0Yhw3bdzMv7.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        10402,
+        14,
+        35
+      ],
+      "id": 901362,
+      "original_language": "en",
+      "original_title": "Trolls Band Together",
+      "overview": "When Branch's brother, Floyd, is kidnapped for his musical talents by a pair of nefarious pop-star villains, Branch and Poppy embark on a harrowing and emotional journey to reunite the other brothers and rescue Floyd from a fate even worse than pop-culture obscurity.",
+      "popularity": 559.142,
+      "poster_path": "/bkpPTZUdq31UGDovmszsg2CchiI.jpg",
+      "release_date": "2023-10-12",
+      "title": "Trolls Band Together",
+      "video": false,
+      "vote_average": 7.185,
+      "vote_count": 493
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/f1AQhx6ZfGhPZFTVKgxG91PhEYc.jpg",
+      "genre_ids": [
+        36,
+        12,
+        10752,
+        18
+      ],
+      "id": 753342,
+      "original_language": "en",
+      "original_title": "Napoleon",
+      "overview": "An epic that details the checkered rise and fall of French Emperor Napoleon Bonaparte and his relentless journey to power through the prism of his addictive, volatile relationship with his wife, Josephine.",
+      "popularity": 557.462,
+      "poster_path": "/jE5o7y9K6pZtWNNMEw3IdpHuncR.jpg",
+      "release_date": "2023-11-22",
+      "title": "Napoleon",
+      "video": false,
+      "vote_average": 6.397,
+      "vote_count": 931
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/1jITxVJhkiFJuQuj8NcPLmDNtJg.jpg",
+      "genre_ids": [
+        18,
+        35,
+        53
+      ],
+      "id": 930564,
+      "original_language": "en",
+      "original_title": "Saltburn",
+      "overview": "Struggling to find his place at Oxford University, student Oliver Quick finds himself drawn into the world of the charming and aristocratic Felix Catton, who invites him to Saltburn, his eccentric family's sprawling estate, for a summer never to be forgotten.",
+      "popularity": 538.344,
+      "poster_path": "/qjhahNLSZ705B5JP92YMEYPocPz.jpg",
+      "release_date": "2023-11-16",
+      "title": "Saltburn",
+      "video": false,
+      "vote_average": 7.159,
+      "vote_count": 941
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/15BnuDQ8pYRmLqPZKAk5vIhUu9J.jpg",
+      "genre_ids": [
+        37,
+        53,
+        28
+      ],
+      "id": 843380,
+      "original_language": "en",
+      "original_title": "Dead for a Dollar",
+      "overview": "In 1897, veteran bounty hunter Max Borlund is deep into Mexico where he encounters professional gambler and outlaw Joe Cribbens — a sworn enemy he sent to prison years before. Max is on a mission to find and return Rachel Kidd, the wife of a wealthy businessman, who as the story is told to Max, has been abducted by Buffalo Soldier Elijah Jones. Max is ultimately faced with a showdown to save honor.",
+      "popularity": 514.182,
+      "poster_path": "/1AnXfjxFqMsQmUPSvt9YxUJhfFw.jpg",
+      "release_date": "2022-09-30",
+      "title": "Dead for a Dollar",
+      "video": false,
+      "vote_average": 5.633,
+      "vote_count": 181
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zIYROrkHJPYB3VTiW1L9QVgaQO.jpg",
+      "genre_ids": [
+        28,
+        35
+      ],
+      "id": 897087,
+      "original_language": "en",
+      "original_title": "Freelance",
+      "overview": "An ex-special forces operative takes a job to provide security for a journalist as she interviews a dictator, but a military coup breaks out in the middle of the interview, they are forced to escape into the jungle where they must survive.",
+      "popularity": 511.743,
+      "poster_path": "/7Bd4EUOqQDKZXA6Od5gkfzRNb0.jpg",
+      "release_date": "2023-10-05",
+      "title": "Freelance",
+      "video": false,
+      "vote_average": 6.49,
+      "vote_count": 450
+    }
+  ],
+  "total_pages": 42214,
+  "total_results": 844266
+}
