@@ -92,6 +92,9 @@ dev_dependencies:
   # for creating api models => https://pub.dev/packages/json_serializable
   json_serializable: ^6.7.1
 
+  # for testing => https://pub.dev/packages/mockito
+  mockito: ^5.4.4
+
 flutter:
   uses-material-design: true
 
