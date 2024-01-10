@@ -3,17 +3,23 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i6;
+import 'dart:async' as _i8;
 
-import 'package:dio/dio.dart' as _i4;
+import 'package:dio/dio.dart' as _i2;
 import 'package:flutter_clean_architecture/src/core/network/dio_client.dart'
     as _i7;
+import 'package:flutter_clean_architecture/src/data/datasources/remote/actor/actor_remote_data_source.dart'
+    as _i10;
 import 'package:flutter_clean_architecture/src/data/datasources/remote/movie/movie_remote_data_source.dart'
+    as _i9;
+import 'package:flutter_clean_architecture/src/data/models/actor_detail/actor_detail_model.dart'
     as _i5;
+import 'package:flutter_clean_architecture/src/data/models/actor_social_media/actor_social_media_model.dart'
+    as _i6;
 import 'package:flutter_clean_architecture/src/data/models/movie_credit/movie_credit_model.dart'
-    as _i3;
+    as _i4;
 import 'package:flutter_clean_architecture/src/data/models/movie_listings/movie_listings_model.dart'
-    as _i2;
+    as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -29,9 +35,8 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeMovieListingsModel_0 extends _i1.SmartFake
-    implements _i2.MovieListingsModel {
-  _FakeMovieListingsModel_0(
+class _FakeResponse_0<T> extends _i1.SmartFake implements _i2.Response<T> {
+  _FakeResponse_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -40,9 +45,9 @@ class _FakeMovieListingsModel_0 extends _i1.SmartFake
         );
 }
 
-class _FakeMovieCreditModel_1 extends _i1.SmartFake
-    implements _i3.MovieCreditModel {
-  _FakeMovieCreditModel_1(
+class _FakeMovieListingsModel_1 extends _i1.SmartFake
+    implements _i3.MovieListingsModel {
+  _FakeMovieListingsModel_1(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -51,8 +56,9 @@ class _FakeMovieCreditModel_1 extends _i1.SmartFake
         );
 }
 
-class _FakeResponse_2<T> extends _i1.SmartFake implements _i4.Response<T> {
-  _FakeResponse_2(
+class _FakeMovieCreditModel_2 extends _i1.SmartFake
+    implements _i4.MovieCreditModel {
+  _FakeMovieCreditModel_2(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -61,71 +67,26 @@ class _FakeResponse_2<T> extends _i1.SmartFake implements _i4.Response<T> {
         );
 }
 
-/// A class which mocks [MovieRemoteDataSource].
-///
-/// See the documentation for Mockito's code generation for more information.
-class MockMovieRemoteDataSource extends _i1.Mock
-    implements _i5.MovieRemoteDataSource {
-  MockMovieRemoteDataSource() {
-    _i1.throwOnMissingStub(this);
-  }
+class _FakeActorDetailModel_3 extends _i1.SmartFake
+    implements _i5.ActorDetailModel {
+  _FakeActorDetailModel_3(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
+}
 
-  @override
-  _i6.Future<_i2.MovieListingsModel> getPopularMovies({required int? page}) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getPopularMovies,
-          [],
-          {#page: page},
-        ),
-        returnValue:
-            _i6.Future<_i2.MovieListingsModel>.value(_FakeMovieListingsModel_0(
-          this,
-          Invocation.method(
-            #getPopularMovies,
-            [],
-            {#page: page},
-          ),
-        )),
-      ) as _i6.Future<_i2.MovieListingsModel>);
-
-  @override
-  _i6.Future<_i2.MovieListingsModel> getTopRatedMovies({required int? page}) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getTopRatedMovies,
-          [],
-          {#page: page},
-        ),
-        returnValue:
-            _i6.Future<_i2.MovieListingsModel>.value(_FakeMovieListingsModel_0(
-          this,
-          Invocation.method(
-            #getTopRatedMovies,
-            [],
-            {#page: page},
-          ),
-        )),
-      ) as _i6.Future<_i2.MovieListingsModel>);
-
-  @override
-  _i6.Future<_i3.MovieCreditModel> getMovieCredits({required int? movieId}) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #getMovieCredits,
-          [],
-          {#movieId: movieId},
-        ),
-        returnValue:
-            _i6.Future<_i3.MovieCreditModel>.value(_FakeMovieCreditModel_1(
-          this,
-          Invocation.method(
-            #getMovieCredits,
-            [],
-            {#movieId: movieId},
-          ),
-        )),
-      ) as _i6.Future<_i3.MovieCreditModel>);
+class _FakeActorSocialMediaModel_4 extends _i1.SmartFake
+    implements _i6.ActorSocialMediaModel {
+  _FakeActorSocialMediaModel_4(
+    Object parent,
+    Invocation parentInvocation,
+  ) : super(
+          parent,
+          parentInvocation,
+        );
 }
 
 /// A class which mocks [DioClient].
@@ -137,12 +98,12 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
   }
 
   @override
-  _i6.Future<_i4.Response<dynamic>> get(
+  _i8.Future<_i2.Response<dynamic>> get(
     String? url, {
     Map<String, dynamic>? queryParameters,
-    _i4.Options? options,
-    _i4.CancelToken? cancelToken,
-    _i4.ProgressCallback? onReceiveProgress,
+    _i2.Options? options,
+    _i2.CancelToken? cancelToken,
+    _i2.ProgressCallback? onReceiveProgress,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -156,7 +117,7 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
           },
         ),
         returnValue:
-            _i6.Future<_i4.Response<dynamic>>.value(_FakeResponse_2<dynamic>(
+            _i8.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
           this,
           Invocation.method(
             #get,
@@ -169,17 +130,17 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
             },
           ),
         )),
-      ) as _i6.Future<_i4.Response<dynamic>>);
+      ) as _i8.Future<_i2.Response<dynamic>>);
 
   @override
-  _i6.Future<_i4.Response<dynamic>> post(
+  _i8.Future<_i2.Response<dynamic>> post(
     String? uri, {
     dynamic data,
     Map<String, dynamic>? queryParameters,
-    _i4.Options? options,
-    _i4.CancelToken? cancelToken,
-    _i4.ProgressCallback? onSendProgress,
-    _i4.ProgressCallback? onReceiveProgress,
+    _i2.Options? options,
+    _i2.CancelToken? cancelToken,
+    _i2.ProgressCallback? onSendProgress,
+    _i2.ProgressCallback? onReceiveProgress,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -195,7 +156,7 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
           },
         ),
         returnValue:
-            _i6.Future<_i4.Response<dynamic>>.value(_FakeResponse_2<dynamic>(
+            _i8.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
           this,
           Invocation.method(
             #post,
@@ -210,17 +171,17 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
             },
           ),
         )),
-      ) as _i6.Future<_i4.Response<dynamic>>);
+      ) as _i8.Future<_i2.Response<dynamic>>);
 
   @override
-  _i6.Future<_i4.Response<dynamic>> put(
+  _i8.Future<_i2.Response<dynamic>> put(
     String? uri, {
     dynamic data,
     Map<String, dynamic>? queryParameters,
-    _i4.Options? options,
-    _i4.CancelToken? cancelToken,
-    _i4.ProgressCallback? onSendProgress,
-    _i4.ProgressCallback? onReceiveProgress,
+    _i2.Options? options,
+    _i2.CancelToken? cancelToken,
+    _i2.ProgressCallback? onSendProgress,
+    _i2.ProgressCallback? onReceiveProgress,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -236,7 +197,7 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
           },
         ),
         returnValue:
-            _i6.Future<_i4.Response<dynamic>>.value(_FakeResponse_2<dynamic>(
+            _i8.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
           this,
           Invocation.method(
             #put,
@@ -251,17 +212,17 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
             },
           ),
         )),
-      ) as _i6.Future<_i4.Response<dynamic>>);
+      ) as _i8.Future<_i2.Response<dynamic>>);
 
   @override
-  _i6.Future<_i4.Response<dynamic>> patch(
+  _i8.Future<_i2.Response<dynamic>> patch(
     String? uri, {
     dynamic data,
     Map<String, dynamic>? queryParameters,
-    _i4.Options? options,
-    _i4.CancelToken? cancelToken,
-    _i4.ProgressCallback? onSendProgress,
-    _i4.ProgressCallback? onReceiveProgress,
+    _i2.Options? options,
+    _i2.CancelToken? cancelToken,
+    _i2.ProgressCallback? onSendProgress,
+    _i2.ProgressCallback? onReceiveProgress,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -277,7 +238,7 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
           },
         ),
         returnValue:
-            _i6.Future<_i4.Response<dynamic>>.value(_FakeResponse_2<dynamic>(
+            _i8.Future<_i2.Response<dynamic>>.value(_FakeResponse_0<dynamic>(
           this,
           Invocation.method(
             #patch,
@@ -292,17 +253,17 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
             },
           ),
         )),
-      ) as _i6.Future<_i4.Response<dynamic>>);
+      ) as _i8.Future<_i2.Response<dynamic>>);
 
   @override
-  _i6.Future<dynamic> delete(
+  _i8.Future<dynamic> delete(
     String? uri, {
     dynamic data,
     Map<String, dynamic>? queryParameters,
-    _i4.Options? options,
-    _i4.CancelToken? cancelToken,
-    _i4.ProgressCallback? onSendProgress,
-    _i4.ProgressCallback? onReceiveProgress,
+    _i2.Options? options,
+    _i2.CancelToken? cancelToken,
+    _i2.ProgressCallback? onSendProgress,
+    _i2.ProgressCallback? onReceiveProgress,
   }) =>
       (super.noSuchMethod(
         Invocation.method(
@@ -317,6 +278,122 @@ class MockDioClient extends _i1.Mock implements _i7.DioClient {
             #onReceiveProgress: onReceiveProgress,
           },
         ),
-        returnValue: _i6.Future<dynamic>.value(),
-      ) as _i6.Future<dynamic>);
+        returnValue: _i8.Future<dynamic>.value(),
+      ) as _i8.Future<dynamic>);
+}
+
+/// A class which mocks [MovieRemoteDataSource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMovieRemoteDataSource extends _i1.Mock
+    implements _i9.MovieRemoteDataSource {
+  MockMovieRemoteDataSource() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i8.Future<_i3.MovieListingsModel> getPopularMovies({required int? page}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getPopularMovies,
+          [],
+          {#page: page},
+        ),
+        returnValue:
+            _i8.Future<_i3.MovieListingsModel>.value(_FakeMovieListingsModel_1(
+          this,
+          Invocation.method(
+            #getPopularMovies,
+            [],
+            {#page: page},
+          ),
+        )),
+      ) as _i8.Future<_i3.MovieListingsModel>);
+
+  @override
+  _i8.Future<_i3.MovieListingsModel> getTopRatedMovies({required int? page}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getTopRatedMovies,
+          [],
+          {#page: page},
+        ),
+        returnValue:
+            _i8.Future<_i3.MovieListingsModel>.value(_FakeMovieListingsModel_1(
+          this,
+          Invocation.method(
+            #getTopRatedMovies,
+            [],
+            {#page: page},
+          ),
+        )),
+      ) as _i8.Future<_i3.MovieListingsModel>);
+
+  @override
+  _i8.Future<_i4.MovieCreditModel> getMovieCredits({required int? movieId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getMovieCredits,
+          [],
+          {#movieId: movieId},
+        ),
+        returnValue:
+            _i8.Future<_i4.MovieCreditModel>.value(_FakeMovieCreditModel_2(
+          this,
+          Invocation.method(
+            #getMovieCredits,
+            [],
+            {#movieId: movieId},
+          ),
+        )),
+      ) as _i8.Future<_i4.MovieCreditModel>);
+}
+
+/// A class which mocks [ActorRemoteDataSource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockActorRemoteDataSource extends _i1.Mock
+    implements _i10.ActorRemoteDataSource {
+  MockActorRemoteDataSource() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i8.Future<_i5.ActorDetailModel> getActorDetail({required String? actorId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getActorDetail,
+          [],
+          {#actorId: actorId},
+        ),
+        returnValue:
+            _i8.Future<_i5.ActorDetailModel>.value(_FakeActorDetailModel_3(
+          this,
+          Invocation.method(
+            #getActorDetail,
+            [],
+            {#actorId: actorId},
+          ),
+        )),
+      ) as _i8.Future<_i5.ActorDetailModel>);
+
+  @override
+  _i8.Future<_i6.ActorSocialMediaModel> getActorSocialMedia(
+          {required String? actorId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getActorSocialMedia,
+          [],
+          {#actorId: actorId},
+        ),
+        returnValue: _i8.Future<_i6.ActorSocialMediaModel>.value(
+            _FakeActorSocialMediaModel_4(
+          this,
+          Invocation.method(
+            #getActorSocialMedia,
+            [],
+            {#actorId: actorId},
+          ),
+        )),
+      ) as _i8.Future<_i6.ActorSocialMediaModel>);
 }
