@@ -8,8 +8,12 @@ import 'dart:async' as _i8;
 import 'package:dio/dio.dart' as _i2;
 import 'package:flutter_clean_architecture/src/core/network/dio_client.dart'
     as _i7;
-import 'package:flutter_clean_architecture/src/data/datasources/remote/actor/actor_remote_data_source.dart'
+import 'package:flutter_clean_architecture/src/data/datasources/local/_collections/movie_detail/movie_detail_collection.dart'
+    as _i11;
+import 'package:flutter_clean_architecture/src/data/datasources/local/movie/movie_local_data_source.dart'
     as _i10;
+import 'package:flutter_clean_architecture/src/data/datasources/remote/actor/actor_remote_data_source.dart'
+    as _i12;
 import 'package:flutter_clean_architecture/src/data/datasources/remote/movie/movie_remote_data_source.dart'
     as _i9;
 import 'package:flutter_clean_architecture/src/data/models/actor_detail/actor_detail_model.dart'
@@ -349,11 +353,68 @@ class MockMovieRemoteDataSource extends _i1.Mock
       ) as _i8.Future<_i4.MovieCreditModel>);
 }
 
+/// A class which mocks [MovieLocalDataSource].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMovieLocalDataSource extends _i1.Mock
+    implements _i10.MovieLocalDataSource {
+  MockMovieLocalDataSource() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i8.Future<void> saveMovieDetail(
+          {required _i11.MovieDetailCollection? movieDetailCollection}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #saveMovieDetail,
+          [],
+          {#movieDetailCollection: movieDetailCollection},
+        ),
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
+
+  @override
+  _i8.Future<void> deleteMovieDetail({required int? movieId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteMovieDetail,
+          [],
+          {#movieId: movieId},
+        ),
+        returnValue: _i8.Future<void>.value(),
+        returnValueForMissingStub: _i8.Future<void>.value(),
+      ) as _i8.Future<void>);
+
+  @override
+  _i8.Future<bool> isSavedMovieDetail({required int? movieId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #isSavedMovieDetail,
+          [],
+          {#movieId: movieId},
+        ),
+        returnValue: _i8.Future<bool>.value(false),
+      ) as _i8.Future<bool>);
+
+  @override
+  _i8.Future<List<_i11.MovieDetailCollection>> getSavedMovieDetails() =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSavedMovieDetails,
+          [],
+        ),
+        returnValue: _i8.Future<List<_i11.MovieDetailCollection>>.value(
+            <_i11.MovieDetailCollection>[]),
+      ) as _i8.Future<List<_i11.MovieDetailCollection>>);
+}
+
 /// A class which mocks [ActorRemoteDataSource].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockActorRemoteDataSource extends _i1.Mock
-    implements _i10.ActorRemoteDataSource {
+    implements _i12.ActorRemoteDataSource {
   MockActorRemoteDataSource() {
     _i1.throwOnMissingStub(this);
   }

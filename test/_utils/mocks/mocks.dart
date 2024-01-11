@@ -5,6 +5,7 @@ import 'package:mockito/annotations.dart';
 @GenerateMocks([
   DioClient,
   MovieRemoteDataSource,
+  MovieLocalDataSource,
   ActorRemoteDataSource,
 ])
 void main() {}
