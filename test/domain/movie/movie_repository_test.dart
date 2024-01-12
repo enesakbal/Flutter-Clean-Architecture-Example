@@ -103,7 +103,7 @@ void main() {
 
     test('should return [NetworkException] when the call to remote data source is unsuccessful', () async {
       // arrange
-      when(mockMovieRemoteDataSource.getPopularMovies(page: anyNamed('page'))).thenThrow(dioException);
+      when(mockMovieRemoteDataSource.getPopularMovies(page: tPage)).thenThrow(dioException);
       // act
       final result = await movieRepository.getPopularMovies(page: tPage);
       // assert
@@ -139,7 +139,7 @@ void main() {
 
     test('should return [NetworkException] when the call to remote data source is unsuccessful', () async {
       // arrange
-      when(mockMovieRemoteDataSource.getTopRatedMovies(page: anyNamed('page'))).thenThrow(dioException);
+      when(mockMovieRemoteDataSource.getTopRatedMovies(page: tPage)).thenThrow(dioException);
       // act
       final result = await movieRepository.getTopRatedMovies(page: tPage);
       // assert
@@ -175,7 +175,7 @@ void main() {
 
     test('should return [NetworkException] when the call to remote data source is unsuccessful', () async {
       // arrange
-      when(mockMovieRemoteDataSource.getMovieCredits(movieId: anyNamed('movieId'))).thenThrow(dioException);
+      when(mockMovieRemoteDataSource.getMovieCredits(movieId: tMovieId)).thenThrow(dioException);
       // act
       final result = await movieRepository.getMovieCredits(movieId: tMovieId);
       // assert
