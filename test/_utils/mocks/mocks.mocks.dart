@@ -6,6 +6,10 @@
 import 'dart:async' as _i8;
 
 import 'package:dio/dio.dart' as _i2;
+import 'package:flutter_clean_architecture/src/core/exceptions/database/database_exception.dart'
+    as _i18;
+import 'package:flutter_clean_architecture/src/core/exceptions/network/network_exception.dart'
+    as _i15;
 import 'package:flutter_clean_architecture/src/core/network/dio_client.dart'
     as _i7;
 import 'package:flutter_clean_architecture/src/data/datasources/local/_collections/movie_detail/movie_detail_collection.dart'
@@ -24,7 +28,15 @@ import 'package:flutter_clean_architecture/src/data/models/movie_credit/movie_cr
     as _i4;
 import 'package:flutter_clean_architecture/src/data/models/movie_listings/movie_listings_model.dart'
     as _i3;
+import 'package:flutter_clean_architecture/src/domain/entities/export_entities.dart'
+    as _i16;
+import 'package:flutter_clean_architecture/src/domain/repositories/actor/actor_repository.dart'
+    as _i19;
+import 'package:flutter_clean_architecture/src/domain/repositories/movie/movie_repository.dart'
+    as _i13;
+import 'package:fpdart/fpdart.dart' as _i14;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:mockito/src/dummies.dart' as _i17;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -457,4 +469,218 @@ class MockActorRemoteDataSource extends _i1.Mock
           ),
         )),
       ) as _i8.Future<_i6.ActorSocialMediaModel>);
+}
+
+/// A class which mocks [MovieRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMovieRepository extends _i1.Mock implements _i13.MovieRepository {
+  MockMovieRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>
+      getTopRatedMovies({required int? page}) => (super.noSuchMethod(
+            Invocation.method(
+              #getTopRatedMovies,
+              [],
+              {#page: page},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.MovieListingsEntity>>.value(_i17.dummyValue<
+                _i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>(
+              this,
+              Invocation.method(
+                #getTopRatedMovies,
+                [],
+                {#page: page},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>);
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>
+      getPopularMovies({required int? page}) => (super.noSuchMethod(
+            Invocation.method(
+              #getPopularMovies,
+              [],
+              {#page: page},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.MovieListingsEntity>>.value(_i17.dummyValue<
+                _i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>(
+              this,
+              Invocation.method(
+                #getPopularMovies,
+                [],
+                {#page: page},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>);
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.MovieCreditEntity>>
+      getMovieCredits({required int? movieId}) => (super.noSuchMethod(
+            Invocation.method(
+              #getMovieCredits,
+              [],
+              {#movieId: movieId},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.MovieCreditEntity>>.value(_i17.dummyValue<
+                _i14.Either<_i15.NetworkException, _i16.MovieCreditEntity>>(
+              this,
+              Invocation.method(
+                #getMovieCredits,
+                [],
+                {#movieId: movieId},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.MovieCreditEntity>>);
+
+  @override
+  _i8.Future<_i14.Either<_i18.DatabaseException, List<_i16.MovieDetailEntity>>>
+      getSavedMovieDetails() => (super.noSuchMethod(
+            Invocation.method(
+              #getSavedMovieDetails,
+              [],
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i18.DatabaseException,
+                    List<_i16.MovieDetailEntity>>>.value(_i17.dummyValue<
+                _i14
+                .Either<_i18.DatabaseException, List<_i16.MovieDetailEntity>>>(
+              this,
+              Invocation.method(
+                #getSavedMovieDetails,
+                [],
+              ),
+            )),
+          ) as _i8.Future<
+              _i14
+              .Either<_i18.DatabaseException, List<_i16.MovieDetailEntity>>>);
+
+  @override
+  _i8.Future<_i14.Either<_i18.DatabaseException, void>> saveMovieDetails(
+          {required _i16.MovieDetailEntity? movieDetailEntity}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #saveMovieDetails,
+          [],
+          {#movieDetailEntity: movieDetailEntity},
+        ),
+        returnValue:
+            _i8.Future<_i14.Either<_i18.DatabaseException, void>>.value(
+                _i17.dummyValue<_i14.Either<_i18.DatabaseException, void>>(
+          this,
+          Invocation.method(
+            #saveMovieDetails,
+            [],
+            {#movieDetailEntity: movieDetailEntity},
+          ),
+        )),
+      ) as _i8.Future<_i14.Either<_i18.DatabaseException, void>>);
+
+  @override
+  _i8.Future<_i14.Either<_i18.DatabaseException, void>> deleteMovieDetail(
+          {required int? movieId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #deleteMovieDetail,
+          [],
+          {#movieId: movieId},
+        ),
+        returnValue:
+            _i8.Future<_i14.Either<_i18.DatabaseException, void>>.value(
+                _i17.dummyValue<_i14.Either<_i18.DatabaseException, void>>(
+          this,
+          Invocation.method(
+            #deleteMovieDetail,
+            [],
+            {#movieId: movieId},
+          ),
+        )),
+      ) as _i8.Future<_i14.Either<_i18.DatabaseException, void>>);
+
+  @override
+  _i8.Future<_i14.Either<_i18.DatabaseException, bool>> isSavedMovieDetail(
+          {required int? movieId}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #isSavedMovieDetail,
+          [],
+          {#movieId: movieId},
+        ),
+        returnValue:
+            _i8.Future<_i14.Either<_i18.DatabaseException, bool>>.value(
+                _i17.dummyValue<_i14.Either<_i18.DatabaseException, bool>>(
+          this,
+          Invocation.method(
+            #isSavedMovieDetail,
+            [],
+            {#movieId: movieId},
+          ),
+        )),
+      ) as _i8.Future<_i14.Either<_i18.DatabaseException, bool>>);
+}
+
+/// A class which mocks [ActorRepository].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockActorRepository extends _i1.Mock implements _i19.ActorRepository {
+  MockActorRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.ActorDetailEntity>>
+      getActorDetail({required String? actorId}) => (super.noSuchMethod(
+            Invocation.method(
+              #getActorDetail,
+              [],
+              {#actorId: actorId},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.ActorDetailEntity>>.value(_i17.dummyValue<
+                _i14.Either<_i15.NetworkException, _i16.ActorDetailEntity>>(
+              this,
+              Invocation.method(
+                #getActorDetail,
+                [],
+                {#actorId: actorId},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.ActorDetailEntity>>);
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.ActorSocialMediaEntity>>
+      getActorSocialMedia({required String? actorId}) => (super.noSuchMethod(
+            Invocation.method(
+              #getActorSocialMedia,
+              [],
+              {#actorId: actorId},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.ActorSocialMediaEntity>>.value(_i17.dummyValue<
+                _i14
+                .Either<_i15.NetworkException, _i16.ActorSocialMediaEntity>>(
+              this,
+              Invocation.method(
+                #getActorSocialMedia,
+                [],
+                {#actorId: actorId},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.ActorSocialMediaEntity>>);
 }
