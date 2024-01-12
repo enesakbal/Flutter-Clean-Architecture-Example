@@ -52,7 +52,7 @@ void main() {
       provideDummy<Either<NetworkException, ActorDetailEntity>>(Left(NetworkException.fromDioError(dioException)));
     });
 
-    test('should get actor detail from the repository', () async {
+    test('should return [ActorDetailEntity] when the call to repository is successful', () async {
       // arrange
       when(actorRepository.getActorDetail(actorId: tId)).thenAnswer((_) async => Right(tActorDetailEntity));
       // act
@@ -63,7 +63,7 @@ void main() {
       verifyNoMoreInteractions(actorRepository);
     });
 
-    test('should return NetworkException when the call to repository is unsuccessful', () async {
+    test('should return [NetworkException] when the call to repository is unsuccessful', () async {
       // arrange
       when(actorRepository.getActorDetail(actorId: tId))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
@@ -90,7 +90,7 @@ void main() {
       provideDummy<Either<NetworkException, ActorSocialMediaEntity>>(Left(NetworkException.fromDioError(dioException)));
     });
 
-    test('should get actor social media from the repository', () async {
+    test('should return [ActorMovieCreditsEntity] when the call to repository is successful', () async {
       // arrange
       when(actorRepository.getActorSocialMedia(actorId: tId)).thenAnswer((_) async => Right(tActorMovieCreditsEntity));
       // act
@@ -101,7 +101,7 @@ void main() {
       verifyNoMoreInteractions(actorRepository);
     });
 
-    test('should return NetworkException when the call to repository is unsuccessful', () async {
+    test('should return [NetworkException] when the call to repository is unsuccessful', () async {
       // arrange
       when(actorRepository.getActorSocialMedia(actorId: tId))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));

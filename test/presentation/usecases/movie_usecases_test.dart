@@ -60,7 +60,7 @@ void main() {
       provideDummy<Either<NetworkException, MovieListingsEntity>>(Left(NetworkException.fromDioError(dioException)));
     });
 
-    test('should get [tMovieListingsEntity] from the repository', () async {
+    test('should return [tMovieListingsEntity] when the call to repository is successful', () async {
       // arrange
       when(mockMovieRepository.getPopularMovies(page: tPage)).thenAnswer((_) async => Right(tMovieListingsEntity));
 
@@ -72,7 +72,7 @@ void main() {
       verifyNoMoreInteractions(mockMovieRepository);
     });
 
-    test('should return a [NetworkException] when getting popular movies fails', () async {
+    test('should return a [NetworkException] when the call to repository is unsuccessful', () async {
       // arrange
       when(mockMovieRepository.getPopularMovies(page: tPage))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
@@ -99,7 +99,7 @@ void main() {
       provideDummy<Either<NetworkException, MovieListingsEntity>>(Left(NetworkException.fromDioError(dioException)));
     });
 
-    test('should get [MovieListingsEntity] from the repository', () async {
+    test('should return [MovieListingsEntity] when the call to repository is successful', () async {
       // arrange
       when(mockMovieRepository.getTopRatedMovies(page: tPage)).thenAnswer((_) async => Right(tMovieListingsEntity));
       // act
@@ -110,7 +110,7 @@ void main() {
       verifyNoMoreInteractions(mockMovieRepository);
     });
 
-    test('should return a [NetworkException] when getting top rated movies fails', () async {
+    test('should return a [NetworkException] when the call to repository is unsuccessful', () async {
       // arrange
       when(mockMovieRepository.getTopRatedMovies(page: tPage))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
@@ -137,7 +137,7 @@ void main() {
       provideDummy<Either<NetworkException, MovieCreditEntity>>(Left(NetworkException.fromDioError(dioException)));
     });
 
-    test('should get [MovieCreditEntity] from the repository', () async {
+    test('should return [MovieCreditEntity] when the call to repository is successful', () async {
       // arrange
       when(mockMovieRepository.getMovieCredits(movieId: tMovieId)).thenAnswer((_) async => Right(tMovieCreditEntity));
       // act
@@ -148,7 +148,7 @@ void main() {
       verifyNoMoreInteractions(mockMovieRepository);
     });
 
-    test('should return a [NetworkException] when getting movie credits fails', () async {
+    test('should return a [NetworkException] when the call to repository is unsuccessful', () async {
       // arrange
       when(mockMovieRepository.getMovieCredits(movieId: tMovieId))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
@@ -161,3 +161,6 @@ void main() {
     });
   });
 }
+
+
+// TODO(enesakbl): add local data source tests
