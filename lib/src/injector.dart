@@ -12,7 +12,7 @@ Future<void> init() async {
 
     //* Data Sources
     ..registerLazySingleton<MovieRemoteDataSource>(() => MovieRemoteDataSourceImpl(injector()))
-    ..registerLazySingleton<MovieLocalDataSource>(() => MovieLocalDataSourceImpl(injector<LocalDatabase>().db))
+    ..registerLazySingleton<MovieLocalDataSource>(() => MovieLocalDataSourceImpl(injector<LocalDatabase>()))
     ..registerLazySingleton<ActorRemoteDataSource>(() => ActorRemoteDataSourceImpl(injector()))
 
     //* Repositories

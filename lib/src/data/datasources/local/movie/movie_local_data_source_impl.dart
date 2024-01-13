@@ -1,17 +1,19 @@
 import 'package:isar/isar.dart';
 
+import '../../../../core/database/local_database.dart';
 import '../_collections/movie_detail/movie_detail_collection.dart';
 import 'movie_local_data_source.dart';
 
 class MovieLocalDataSourceImpl implements MovieLocalDataSource {
-  const MovieLocalDataSourceImpl(this.db);
+  MovieLocalDataSourceImpl(this.localDatabase);
 
-  final Isar db;
+  final LocalDatabase localDatabase;
 
   /// Deletes the movie detail with the given [movieId] from the local database.
   @override
   Future<void> deleteMovieDetail({required int? movieId}) async {
     try {
+      final db = localDatabase.db;
       await db.writeTxn(() async => db.movieDetailCollections.filter().idEqualTo(movieId).deleteAll());
     } catch (_) {
       rethrow;
@@ -22,7 +24,7 @@ class MovieLocalDataSourceImpl implements MovieLocalDataSource {
   @override
   Future<List<MovieDetailCollection>> getSavedMovieDetails() async {
     try {
-      final list = await db.movieDetailCollections.where().findAll();
+      final list = await localDatabase.db.movieDetailCollections.where().findAll();
 
       return list;
     } catch (_) {
@@ -34,6 +36,8 @@ class MovieLocalDataSourceImpl implements MovieLocalDataSource {
   @override
   Future<void> saveMovieDetail({required MovieDetailCollection movieDetailCollection}) async {
     try {
+      final db = localDatabase.db;
+
       await db.writeTxn(() async => db.movieDetailCollections.put(movieDetailCollection));
     } catch (_) {
       rethrow;
@@ -44,6 +48,7 @@ class MovieLocalDataSourceImpl implements MovieLocalDataSource {
   @override
   Future<bool> isSavedMovieDetail({required int? movieId}) async {
     try {
+      final db = localDatabase.db;
       final isSaved = await db.movieDetailCollections.filter().idEqualTo(movieId).isNotEmpty();
 
       return isSaved;
