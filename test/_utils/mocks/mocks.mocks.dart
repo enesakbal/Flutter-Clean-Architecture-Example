@@ -34,6 +34,10 @@ import 'package:flutter_clean_architecture/src/domain/repositories/actor/actor_r
     as _i19;
 import 'package:flutter_clean_architecture/src/domain/repositories/movie/movie_repository.dart'
     as _i13;
+import 'package:flutter_clean_architecture/src/domain/usecases/actor/actor_usecases.dart'
+    as _i21;
+import 'package:flutter_clean_architecture/src/domain/usecases/movie/movie_usecases.dart'
+    as _i20;
 import 'package:fpdart/fpdart.dart' as _i14;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i17;
@@ -636,6 +640,178 @@ class MockMovieRepository extends _i1.Mock implements _i13.MovieRepository {
 /// See the documentation for Mockito's code generation for more information.
 class MockActorRepository extends _i1.Mock implements _i19.ActorRepository {
   MockActorRepository() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.ActorDetailEntity>>
+      getActorDetail({required String? actorId}) => (super.noSuchMethod(
+            Invocation.method(
+              #getActorDetail,
+              [],
+              {#actorId: actorId},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.ActorDetailEntity>>.value(_i17.dummyValue<
+                _i14.Either<_i15.NetworkException, _i16.ActorDetailEntity>>(
+              this,
+              Invocation.method(
+                #getActorDetail,
+                [],
+                {#actorId: actorId},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.ActorDetailEntity>>);
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.ActorSocialMediaEntity>>
+      getActorSocialMedia({required String? actorId}) => (super.noSuchMethod(
+            Invocation.method(
+              #getActorSocialMedia,
+              [],
+              {#actorId: actorId},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.ActorSocialMediaEntity>>.value(_i17.dummyValue<
+                _i14
+                .Either<_i15.NetworkException, _i16.ActorSocialMediaEntity>>(
+              this,
+              Invocation.method(
+                #getActorSocialMedia,
+                [],
+                {#actorId: actorId},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.ActorSocialMediaEntity>>);
+}
+
+/// A class which mocks [MovieUsecases].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockMovieUsecases extends _i1.Mock implements _i20.MovieUsecases {
+  MockMovieUsecases() {
+    _i1.throwOnMissingStub(this);
+  }
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>
+      getPopularMovies({required int? page}) => (super.noSuchMethod(
+            Invocation.method(
+              #getPopularMovies,
+              [],
+              {#page: page},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.MovieListingsEntity>>.value(_i17.dummyValue<
+                _i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>(
+              this,
+              Invocation.method(
+                #getPopularMovies,
+                [],
+                {#page: page},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>);
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>
+      getTopRatedMovies({required int? page}) => (super.noSuchMethod(
+            Invocation.method(
+              #getTopRatedMovies,
+              [],
+              {#page: page},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.MovieListingsEntity>>.value(_i17.dummyValue<
+                _i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>(
+              this,
+              Invocation.method(
+                #getTopRatedMovies,
+                [],
+                {#page: page},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.MovieListingsEntity>>);
+
+  @override
+  _i8.Future<_i14.Either<_i15.NetworkException, _i16.MovieCreditEntity>>
+      getMovieCredits({required int? movieId}) => (super.noSuchMethod(
+            Invocation.method(
+              #getMovieCredits,
+              [],
+              {#movieId: movieId},
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i15.NetworkException,
+                    _i16.MovieCreditEntity>>.value(_i17.dummyValue<
+                _i14.Either<_i15.NetworkException, _i16.MovieCreditEntity>>(
+              this,
+              Invocation.method(
+                #getMovieCredits,
+                [],
+                {#movieId: movieId},
+              ),
+            )),
+          ) as _i8.Future<
+              _i14.Either<_i15.NetworkException, _i16.MovieCreditEntity>>);
+
+  @override
+  _i8.Future<_i14.Either<_i18.DatabaseException, List<_i16.MovieDetailEntity>>>
+      getSavedMovieDetails() => (super.noSuchMethod(
+            Invocation.method(
+              #getSavedMovieDetails,
+              [],
+            ),
+            returnValue: _i8.Future<
+                _i14.Either<_i18.DatabaseException,
+                    List<_i16.MovieDetailEntity>>>.value(_i17.dummyValue<
+                _i14
+                .Either<_i18.DatabaseException, List<_i16.MovieDetailEntity>>>(
+              this,
+              Invocation.method(
+                #getSavedMovieDetails,
+                [],
+              ),
+            )),
+          ) as _i8.Future<
+              _i14
+              .Either<_i18.DatabaseException, List<_i16.MovieDetailEntity>>>);
+
+  @override
+  _i8.Future<_i14.Either<_i18.DatabaseException, void>> toggleBookmark(
+          {required _i16.MovieDetailEntity? movieDetailEntity}) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #toggleBookmark,
+          [],
+          {#movieDetailEntity: movieDetailEntity},
+        ),
+        returnValue:
+            _i8.Future<_i14.Either<_i18.DatabaseException, void>>.value(
+                _i17.dummyValue<_i14.Either<_i18.DatabaseException, void>>(
+          this,
+          Invocation.method(
+            #toggleBookmark,
+            [],
+            {#movieDetailEntity: movieDetailEntity},
+          ),
+        )),
+      ) as _i8.Future<_i14.Either<_i18.DatabaseException, void>>);
+}
+
+/// A class which mocks [ActorUsecases].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockActorUsecases extends _i1.Mock implements _i21.ActorUsecases {
+  MockActorUsecases() {
     _i1.throwOnMissingStub(this);
   }
 
