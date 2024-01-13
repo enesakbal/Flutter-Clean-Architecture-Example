@@ -8,6 +8,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'src/config/router/app_router.dart';
+import 'src/core/database/local_database.dart';
 import 'src/core/network/dio_client.dart';
 import 'src/core/theme/app_theme.dart';
 import 'src/core/theme/cubit/theme_cubit.dart';
@@ -28,6 +29,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await dotenv.load();
   await init();
+
+  await injector<LocalDatabase>().initialize();
 
   final directory = await getApplicationDocumentsDirectory();
 

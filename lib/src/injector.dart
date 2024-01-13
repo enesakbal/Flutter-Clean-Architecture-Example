@@ -5,11 +5,14 @@ final injector = GetIt.instance;
 Future<void> init() async {
   injector
     //* Network
-    ..registerLazySingleton<DioClient>(() => DioClient())
+    ..registerLazySingleton<DioClient>(DioClient.new)
+
+    //* Database
+    ..registerLazySingleton<LocalDatabase>(LocalDatabase.new)
 
     //* Data Sources
     ..registerLazySingleton<MovieRemoteDataSource>(() => MovieRemoteDataSourceImpl(injector()))
-    ..registerLazySingleton<MovieLocalDataSource>(MovieLocalDataSourceImpl.new)
+    ..registerLazySingleton<MovieLocalDataSource>(() => MovieLocalDataSourceImpl(injector<LocalDatabase>().db))
     ..registerLazySingleton<ActorRemoteDataSource>(() => ActorRemoteDataSourceImpl(injector()))
 
     //* Repositories
