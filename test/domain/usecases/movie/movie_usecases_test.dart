@@ -7,7 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:mockito/mockito.dart';
 
-import '../../_utils/mocks/mocks.mocks.dart';
+import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
   late final MovieRepository mockMovieRepository;
