@@ -49,7 +49,7 @@ void main() {
   );
 
   blocTest<GetMovieCreditsCubit, GetMovieCreditsState>(
-    'should emit [GetMovieCreditsLoading, GetMovieCreditsError] when failure',
+    'should emit [GetMovieCreditsLoading, GetMovieCreditsError] when internet connection error occurs with SocketException',
     build: () {
       final dioException = DioException(
         requestOptions: RequestOptions(),
