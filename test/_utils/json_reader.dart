@@ -1,11 +1,15 @@
 import 'dart:convert';
 import 'dart:io';
 
+/// Reads a JSON file with the given [name] and returns the decoded JSON object.
+/// The [name] should be the relative path of the JSON file from the current directory.
+///
+/// Example usage:
+/// ```dart
+/// dynamic data = jsonReader('data.json');
+/// ```
 dynamic jsonReader(String name) {
-  var dir = Directory.current.path;
+  final dir = Directory.current.path;
 
-  if (dir.endsWith('/test')) {
-    dir = dir.replaceAll('/test', '');
-  }
   return jsonDecode(File('$dir/test/_utils/_dummy/$name').readAsStringSync());
 }
