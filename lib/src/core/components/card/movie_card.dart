@@ -62,7 +62,7 @@ class MovieCard extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: Theme.of(context)
                           .textTheme
-                          .bodyLarge
+                          .titleMedium
                           ?.copyWith(color: Colors.white, fontWeight: FontWeight.bold),
                     ),
                   ),

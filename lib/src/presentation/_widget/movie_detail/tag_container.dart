@@ -15,7 +15,7 @@ class _TagContainer extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Text(tag, style: const TextStyle(fontWeight: FontWeight.w400, color: Colors.white)),
+      child: Text(tag, style: Theme.of(context).textTheme.labelLarge?.copyWith(color: Colors.white)),
     );
   }
 }

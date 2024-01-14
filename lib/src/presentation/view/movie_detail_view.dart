@@ -80,10 +80,7 @@ class _MovieDetailView extends StatelessWidget {
                               children: [
                                 Text(
                                   movieDetail?.title ?? '',
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
-                                      ?.copyWith(fontWeight: FontWeight.bold, fontSize: 20.sp),
+                                  style: Theme.of(context).textTheme.titleLarge,
                                 ),
                                 5.verticalSpace,
                                 SizedBox(
@@ -153,7 +150,7 @@ class _MovieDetailView extends StatelessWidget {
                       child: Text(
                         'Cast',
                         textAlign: TextAlign.left,
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                        style: Theme.of(context).textTheme.titleLarge,
                       ),
                     ),
                     SafeArea(

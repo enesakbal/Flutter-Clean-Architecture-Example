@@ -64,7 +64,7 @@ class _SocialMediaBottomSheet extends StatelessWidget {
               children: [
                 Text(
                   "$actorName's social accounts",
-                  style: Theme.of(context).textTheme.titleLarge,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500),
                 ),
                 const Divider(),
                 Expanded(
