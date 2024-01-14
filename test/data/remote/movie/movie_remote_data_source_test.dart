@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_clean_architecture/src/core/constants/url_constants.dart';
+import 'package:flutter_clean_architecture/src/core/network/dio_client.dart';
 import 'package:flutter_clean_architecture/src/data/datasources/export_datasources.dart';
 import 'package:flutter_clean_architecture/src/data/models/movie_credit/movie_credit_model.dart';
 import 'package:flutter_clean_architecture/src/data/models/movie_listings/movie_listings_model.dart';
@@ -10,7 +11,7 @@ import '../../../_utils/json_reader.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late MockDioClient mockDioClient;
+  late DioClient mockDioClient;
   late final MovieRemoteDataSourceImpl actorRemoteDataSource;
 
   late final MovieListingsModel tMovieListingsModel;
@@ -39,7 +40,10 @@ void main() {
     setUpAll(() {
       response = Response<dynamic>(
         data: movieListingsJson,
-        requestOptions: RequestOptions(path: UrlConstants.popularMovies, queryParameters: {'page': page}),
+        requestOptions: RequestOptions(
+          path: UrlConstants.popularMovies,
+          queryParameters: {'page': page},
+        ),
       );
     });
 

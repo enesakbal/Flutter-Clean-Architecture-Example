@@ -11,7 +11,7 @@ import 'package:mockito/mockito.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final MovieUsecases movieUsecases;
+  late final MovieUsecases mockMovieUsecases;
 
   late final MovieDetailEntity tMovieDetailEntity1;
   late final MovieDetailEntity tMovieDetailEntity2;
@@ -19,7 +19,7 @@ void main() {
   late final MovieDetailEntity tMovieDetailEntity4;
 
   setUpAll(() {
-    movieUsecases = MockMovieUsecases();
+    mockMovieUsecases = MockMovieUsecases();
 
     tMovieDetailEntity1 = const MovieDetailEntity(
       id: 1,
@@ -66,9 +66,9 @@ void main() {
 
       provideDummy<Either<DatabaseException, List<MovieDetailEntity>>>(Right(tMovieList));
 
-      when(movieUsecases.getSavedMovieDetails()).thenAnswer((_) async => Right(tMovieList));
+      when(mockMovieUsecases.getSavedMovieDetails()).thenAnswer((_) async => Right(tMovieList));
     },
-    build: () => GetSavedMoviesCubit(movieUsecases),
+    build: () => GetSavedMoviesCubit(mockMovieUsecases),
     act: (bloc) => bloc.getSavedMovieDetails(),
     expect: () => [
       const GetSavedMoviesLoading(),
@@ -81,7 +81,7 @@ void main() {
         ],
       ),
     ],
-    verify: (_) => verify(movieUsecases.getSavedMovieDetails()).called(1),
+    verify: (_) => verify(mockMovieUsecases.getSavedMovieDetails()).called(1),
   );
 
   blocTest<GetSavedMoviesCubit, GetSavedMoviesState>(
@@ -91,15 +91,15 @@ void main() {
 
       provideDummy<Either<DatabaseException, List<MovieDetailEntity>>>(Left(DatabaseException.fromIsarError(isarError)));
 
-      when(movieUsecases.getSavedMovieDetails())
+      when(mockMovieUsecases.getSavedMovieDetails())
           .thenAnswer((_) async => Left(DatabaseException.fromIsarError(isarError)));
     },
-    build: () => GetSavedMoviesCubit(movieUsecases),
+    build: () => GetSavedMoviesCubit(mockMovieUsecases),
     act: (bloc) => bloc.getSavedMovieDetails(),
     expect: () => [
       const GetSavedMoviesLoading(),
       const GetSavedMoviesError(message: 'isarError'),
     ],
-    verify: (_) => verify(movieUsecases.getSavedMovieDetails()).called(1),
+    verify: (_) => verify(mockMovieUsecases.getSavedMovieDetails()).called(1),
   );
 }

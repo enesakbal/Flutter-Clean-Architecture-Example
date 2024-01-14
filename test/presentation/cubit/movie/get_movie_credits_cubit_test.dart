@@ -13,12 +13,12 @@ import 'package:mockito/mockito.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final MovieUsecases movieUsecases;
+  late final MovieUsecases mockMovieUsecases;
 
   late final MovieCreditEntity tMovieCreditEntity;
 
   setUpAll(() {
-    movieUsecases = MockMovieUsecases();
+    mockMovieUsecases = MockMovieUsecases();
 
     tMovieCreditEntity = const MovieCreditEntity(
       id: 1,
@@ -38,14 +38,14 @@ void main() {
     build: () {
       provideDummy<Either<NetworkException, MovieCreditEntity>>(Right(tMovieCreditEntity));
 
-      when(movieUsecases.getMovieCredits(movieId: tMovieCreditEntity.id ?? 0))
+      when(mockMovieUsecases.getMovieCredits(movieId: tMovieCreditEntity.id ?? 0))
           .thenAnswer((_) async => Right(tMovieCreditEntity));
 
-      return GetMovieCreditsCubit(movieUsecases);
+      return GetMovieCreditsCubit(mockMovieUsecases);
     },
     act: (bloc) => bloc.getMovieCredits(tMovieCreditEntity.id ?? 0),
     expect: () => [const GetMovieCreditsLoading(), GetMovieCreditsLoaded(tMovieCreditEntity)],
-    verify: (_) => verify(movieUsecases.getMovieCredits(movieId: tMovieCreditEntity.id ?? 0)).called(1),
+    verify: (_) => verify(mockMovieUsecases.getMovieCredits(movieId: tMovieCreditEntity.id ?? 0)).called(1),
   );
 
   blocTest<GetMovieCreditsCubit, GetMovieCreditsState>(
@@ -59,13 +59,13 @@ void main() {
 
       provideDummy<Either<NetworkException, MovieCreditEntity>>(Left(NetworkException.fromDioError(dioException)));
 
-      when(movieUsecases.getMovieCredits(movieId: tMovieCreditEntity.id ?? 0))
+      when(mockMovieUsecases.getMovieCredits(movieId: tMovieCreditEntity.id ?? 0))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
 
-      return GetMovieCreditsCubit(movieUsecases);
+      return GetMovieCreditsCubit(mockMovieUsecases);
     },
     act: (bloc) => bloc.getMovieCredits(tMovieCreditEntity.id ?? 0),
     expect: () => [const GetMovieCreditsLoading(), const GetMovieCreditsError('Please check your internet connection')],
-    verify: (_) => verify(movieUsecases.getMovieCredits(movieId: tMovieCreditEntity.id ?? 0)).called(1),
+    verify: (_) => verify(mockMovieUsecases.getMovieCredits(movieId: tMovieCreditEntity.id ?? 0)).called(1),
   );
 }

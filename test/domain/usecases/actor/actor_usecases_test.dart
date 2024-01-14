@@ -10,15 +10,15 @@ import 'package:mockito/mockito.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final ActorRepository actorRepository;
+  late final ActorRepository mockActorRepository;
   late final ActorUsecases actorUsecases;
 
   late final ActorDetailEntity tActorDetailEntity;
   late final ActorSocialMediaEntity tActorMovieCreditsEntity;
 
   setUpAll(() {
-    actorRepository = MockActorRepository();
-    actorUsecases = ActorUsecases(actorRepository);
+    mockActorRepository = MockActorRepository();
+    actorUsecases = ActorUsecases(mockActorRepository);
 
     tActorDetailEntity = const ActorDetailEntity(
       id: 1,
@@ -44,7 +44,11 @@ void main() {
     final dioException = DioException(
       requestOptions: RequestOptions(),
       error: Exception(),
-      response: Response(requestOptions: RequestOptions(), statusCode: 404, statusMessage: 'Not Found'),
+      response: Response(
+        requestOptions: RequestOptions(),
+        statusCode: 404,
+        statusMessage: 'Not Found',
+      ),
     );
 
     setUp(() {
@@ -54,25 +58,25 @@ void main() {
 
     test('should return [ActorDetailEntity] when the call to repository is successful', () async {
       // arrange
-      when(actorRepository.getActorDetail(actorId: tId)).thenAnswer((_) async => Right(tActorDetailEntity));
+      when(mockActorRepository.getActorDetail(actorId: tId)).thenAnswer((_) async => Right(tActorDetailEntity));
       // act
       final result = await actorUsecases.getActorDetail(actorId: tId);
       // assert
       expect(result, Right(tActorDetailEntity));
-      verify(actorRepository.getActorDetail(actorId: tId));
-      verifyNoMoreInteractions(actorRepository);
+      verify(mockActorRepository.getActorDetail(actorId: tId));
+      verifyNoMoreInteractions(mockActorRepository);
     });
 
     test('should return [NetworkException] when the call to repository is unsuccessful', () async {
       // arrange
-      when(actorRepository.getActorDetail(actorId: tId))
+      when(mockActorRepository.getActorDetail(actorId: tId))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
       // act
       final result = await actorUsecases.getActorDetail(actorId: tId);
       // assert
       expect(result, Left(NetworkException.fromDioError(dioException)));
-      verify(actorRepository.getActorDetail(actorId: tId));
-      verifyNoMoreInteractions(actorRepository);
+      verify(mockActorRepository.getActorDetail(actorId: tId));
+      verifyNoMoreInteractions(mockActorRepository);
     });
   });
 
@@ -92,25 +96,26 @@ void main() {
 
     test('should return [ActorMovieCreditsEntity] when the call to repository is successful', () async {
       // arrange
-      when(actorRepository.getActorSocialMedia(actorId: tId)).thenAnswer((_) async => Right(tActorMovieCreditsEntity));
+      when(mockActorRepository.getActorSocialMedia(actorId: tId))
+          .thenAnswer((_) async => Right(tActorMovieCreditsEntity));
       // act
       final result = await actorUsecases.getActorSocialMedia(actorId: tId);
       // assert
       expect(result, Right(tActorMovieCreditsEntity));
-      verify(actorRepository.getActorSocialMedia(actorId: tId));
-      verifyNoMoreInteractions(actorRepository);
+      verify(mockActorRepository.getActorSocialMedia(actorId: tId));
+      verifyNoMoreInteractions(mockActorRepository);
     });
 
     test('should return [NetworkException] when the call to repository is unsuccessful', () async {
       // arrange
-      when(actorRepository.getActorSocialMedia(actorId: tId))
+      when(mockActorRepository.getActorSocialMedia(actorId: tId))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
       // act
       final result = await actorUsecases.getActorSocialMedia(actorId: tId);
       // assert
       expect(result, Left(NetworkException.fromDioError(dioException)));
-      verify(actorRepository.getActorSocialMedia(actorId: tId));
-      verifyNoMoreInteractions(actorRepository);
+      verify(mockActorRepository.getActorSocialMedia(actorId: tId));
+      verifyNoMoreInteractions(mockActorRepository);
     });
   });
 }

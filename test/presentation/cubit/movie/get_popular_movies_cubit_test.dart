@@ -13,7 +13,7 @@ import 'package:mockito/mockito.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final MovieUsecases movieUsecases;
+  late final MovieUsecases mockMovieUsecases;
 
   late final MovieDetailEntity tMovieDetailEntity;
   late final MovieDetailEntity tMovieDetailEntity2;
@@ -21,7 +21,7 @@ void main() {
   late final MovieDetailEntity tMovieDetailEntity4;
 
   setUpAll(() {
-    movieUsecases = MockMovieUsecases();
+    mockMovieUsecases = MockMovieUsecases();
 
     tMovieDetailEntity = const MovieDetailEntity(
       id: 1,
@@ -70,16 +70,16 @@ void main() {
 
       provideDummy<Either<NetworkException, MovieListingsEntity>>(Right(tMovieListingsEntity));
 
-      when(movieUsecases.getPopularMovies(page: tPage)).thenAnswer((_) async => Right(tMovieListingsEntity));
+      when(mockMovieUsecases.getPopularMovies(page: tPage)).thenAnswer((_) async => Right(tMovieListingsEntity));
     },
-    build: () => GetPopularMoviesCubit(movieUsecases),
+    build: () => GetPopularMoviesCubit(mockMovieUsecases),
     act: (bloc) => bloc.getPopularMovies(),
     expect: () => [
       const GetPopularMoviesLoading(),
       GetPopularMoviesLoaded(
           movies: [tMovieDetailEntity, tMovieDetailEntity2, tMovieDetailEntity3, tMovieDetailEntity4])
     ],
-    verify: (_) => verify(movieUsecases.getPopularMovies(page: 1)).called(1),
+    verify: (_) => verify(mockMovieUsecases.getPopularMovies(page: 1)).called(1),
   );
 
   blocTest<GetPopularMoviesCubit, GetPopularMoviesState>(
@@ -96,15 +96,15 @@ void main() {
 
       provideDummy<Either<NetworkException, MovieListingsEntity>>(Right(tMovieListingsEntity));
 
-      when(movieUsecases.getPopularMovies(page: tPage)).thenAnswer((_) async => Right(tMovieListingsEntity));
+      when(mockMovieUsecases.getPopularMovies(page: tPage)).thenAnswer((_) async => Right(tMovieListingsEntity));
     },
-    build: () => GetPopularMoviesCubit(movieUsecases),
+    build: () => GetPopularMoviesCubit(mockMovieUsecases),
     act: (bloc) => bloc.getPopularMovies(),
     expect: () => [
       const GetPopularMoviesLoading(),
       GetPopularMoviesLoaded(movies: [tMovieDetailEntity, tMovieDetailEntity3, tMovieDetailEntity4])
     ],
-    verify: (_) => verify(movieUsecases.getPopularMovies(page: 1)).called(1),
+    verify: (_) => verify(mockMovieUsecases.getPopularMovies(page: 1)).called(1),
   );
 
   blocTest<GetPopularMoviesCubit, GetPopularMoviesState>(
@@ -120,15 +120,15 @@ void main() {
 
       provideDummy<Either<NetworkException, MovieListingsEntity>>(Left(NetworkException.fromDioError(dioException)));
 
-      when(movieUsecases.getPopularMovies(page: tPage))
+      when(mockMovieUsecases.getPopularMovies(page: tPage))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
     },
-    build: () => GetPopularMoviesCubit(movieUsecases),
+    build: () => GetPopularMoviesCubit(mockMovieUsecases),
     act: (bloc) => bloc.getPopularMovies(),
     expect: () => [
       const GetPopularMoviesLoading(),
       const GetPopularMoviesError(message: 'Please check your internet connection')
     ],
-    verify: (_) => verify(movieUsecases.getPopularMovies(page: 1)).called(1),
+    verify: (_) => verify(mockMovieUsecases.getPopularMovies(page: 1)).called(1),
   );
 }

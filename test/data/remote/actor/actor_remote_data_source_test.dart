@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_clean_architecture/src/core/constants/url_constants.dart';
+import 'package:flutter_clean_architecture/src/core/network/dio_client.dart';
 import 'package:flutter_clean_architecture/src/data/datasources/export_datasources.dart';
 import 'package:flutter_clean_architecture/src/data/models/export_models.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -9,7 +10,7 @@ import '../../../_utils/json_reader.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final MockDioClient mockDioClient;
+  late final DioClient mockDioClient;
   late final ActorRemoteDataSourceImpl actorRemoteDataSource;
 
   late final ActorDetailModel tActorDetailModel;
@@ -39,8 +40,12 @@ void main() {
 
       response = Response<dynamic>(
         data: actorDetailJson,
-        requestOptions:
-            RequestOptions(path: UrlConstants.actorDetail.replaceAll('{person_id}', tActorDetailModel.id.toString())),
+        requestOptions: RequestOptions(
+          path: UrlConstants.actorDetail.replaceAll(
+            '{person_id}',
+            tActorDetailModel.id.toString(),
+          ),
+        ),
       );
     });
 

@@ -13,12 +13,12 @@ import 'package:mockito/mockito.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final ActorUsecases actorUsecases;
+  late final ActorUsecases mockActorUsecases;
 
   late final ActorSocialMediaEntity tActorSocialMediaEntity;
 
   setUpAll(() {
-    actorUsecases = MockActorUsecases();
+    mockActorUsecases = MockActorUsecases();
 
     tActorSocialMediaEntity = const ActorSocialMediaEntity(
       id: 1,
@@ -33,13 +33,13 @@ void main() {
     build: () {
       provideDummy<Either<NetworkException, ActorSocialMediaEntity>>(Right(tActorSocialMediaEntity));
 
-      when(actorUsecases.getActorSocialMedia(actorId: '1')).thenAnswer((_) async => Right(tActorSocialMediaEntity));
+      when(mockActorUsecases.getActorSocialMedia(actorId: '1')).thenAnswer((_) async => Right(tActorSocialMediaEntity));
 
-      return GetActorSocialMediaCubit(actorUsecases);
+      return GetActorSocialMediaCubit(mockActorUsecases);
     },
     act: (bloc) => bloc.getActorSocialMedia(actorId: '1'),
     expect: () => [const GetActorSocialMediaLoading(), GetActorSocialMediaLoaded(data: tActorSocialMediaEntity)],
-    verify: (_) => verify(actorUsecases.getActorSocialMedia(actorId: '1')).called(1),
+    verify: (_) => verify(mockActorUsecases.getActorSocialMedia(actorId: '1')).called(1),
   );
 
   blocTest<GetActorSocialMediaCubit, GetActorSocialMediaState>(
@@ -52,16 +52,16 @@ void main() {
       );
       provideDummy<Either<NetworkException, ActorDetailEntity>>(Left(NetworkException.fromDioError(dioException)));
 
-      when(actorUsecases.getActorSocialMedia(actorId: '1'))
+      when(mockActorUsecases.getActorSocialMedia(actorId: '1'))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
 
-      return GetActorSocialMediaCubit(actorUsecases);
+      return GetActorSocialMediaCubit(mockActorUsecases);
     },
     act: (bloc) => bloc.getActorSocialMedia(actorId: '1'),
     expect: () => [
       const GetActorSocialMediaLoading(),
       const GetActorSocialMediaError(message: 'Please check your internet connection'),
     ],
-    verify: (_) => verify(actorUsecases.getActorSocialMedia(actorId: '1')).called(1),
+    verify: (_) => verify(mockActorUsecases.getActorSocialMedia(actorId: '1')).called(1),
   );
 }

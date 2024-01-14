@@ -11,12 +11,12 @@ import 'package:mockito/mockito.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final MovieUsecases movieUsecases;
+  late final MovieUsecases mockMovieUsecases;
 
   late final MovieDetailEntity tMovieDetailEntity;
 
   setUpAll(() {
-    movieUsecases = MockMovieUsecases();
+    mockMovieUsecases = MockMovieUsecases();
 
     tMovieDetailEntity = const MovieDetailEntity(
       id: 1,
@@ -32,17 +32,17 @@ void main() {
     setUp: () {
       provideDummy<Either<DatabaseException, void>>(const Right(null));
 
-      when(movieUsecases.toggleBookmark(movieDetailEntity: tMovieDetailEntity))
+      when(mockMovieUsecases.toggleBookmark(movieDetailEntity: tMovieDetailEntity))
           .thenAnswer((_) async => const Right(null));
     },
-    build: () => ToggleBookmarkCubit(movieUsecases),
+    build: () => ToggleBookmarkCubit(mockMovieUsecases),
     act: (ToggleBookmarkCubit cubit) => cubit.toggleBookmark(movieDetailEntity: tMovieDetailEntity),
     expect: () => [
       const ToggleBookmarkLoading(),
       const ToggleBookmarkSuccess(),
     ],
     verify: (_) {
-      verify(movieUsecases.toggleBookmark(movieDetailEntity: tMovieDetailEntity)).called(1);
+      verify(mockMovieUsecases.toggleBookmark(movieDetailEntity: tMovieDetailEntity)).called(1);
     },
   );
 
@@ -53,15 +53,15 @@ void main() {
 
       provideDummy<Either<DatabaseException, void>>(Left(DatabaseException.fromIsarError(isarError)));
 
-      when(movieUsecases.toggleBookmark(movieDetailEntity: tMovieDetailEntity))
+      when(mockMovieUsecases.toggleBookmark(movieDetailEntity: tMovieDetailEntity))
           .thenAnswer((_) async => Left(DatabaseException.fromIsarError(isarError)));
     },
-    build: () => ToggleBookmarkCubit(movieUsecases),
+    build: () => ToggleBookmarkCubit(mockMovieUsecases),
     act: (ToggleBookmarkCubit cubit) => cubit.toggleBookmark(movieDetailEntity: tMovieDetailEntity),
     expect: () => [
       const ToggleBookmarkLoading(),
       const ToggleBookmarkError(message: 'isarError'),
     ],
-    verify: (_) => verify(movieUsecases.toggleBookmark(movieDetailEntity: tMovieDetailEntity)).called(1),
+    verify: (_) => verify(mockMovieUsecases.toggleBookmark(movieDetailEntity: tMovieDetailEntity)).called(1),
   );
 }

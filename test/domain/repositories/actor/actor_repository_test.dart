@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_clean_architecture/src/core/exceptions/network/network_exception.dart';
+import 'package:flutter_clean_architecture/src/data/datasources/export_datasources.dart';
 import 'package:flutter_clean_architecture/src/data/models/actor_detail/actor_detail_model.dart';
 import 'package:flutter_clean_architecture/src/data/models/actor_social_media/actor_social_media_model.dart';
 import 'package:flutter_clean_architecture/src/data/repositories/export_repository_impls.dart';
@@ -12,7 +13,7 @@ import 'package:mockito/mockito.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final MockActorRemoteDataSource mockActorRemoteDataSource;
+  late final ActorRemoteDataSource mockActorRemoteDataSource;
   late final ActorRepository actorRepositoryImpl;
 
   late final ActorDetailModel tActorDetailModel;

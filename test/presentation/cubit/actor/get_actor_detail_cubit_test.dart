@@ -13,12 +13,12 @@ import 'package:mockito/mockito.dart';
 import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
-  late final ActorUsecases actorUsecases;
+  late final ActorUsecases mockActorUsecases;
 
   late final ActorDetailEntity tActorDetailEntity;
 
   setUpAll(() {
-    actorUsecases = MockActorUsecases();
+    mockActorUsecases = MockActorUsecases();
 
     tActorDetailEntity = const ActorDetailEntity(
       id: 1,
@@ -36,13 +36,13 @@ void main() {
     build: () {
       provideDummy<Either<NetworkException, ActorDetailEntity>>(Right(tActorDetailEntity));
 
-      when(actorUsecases.getActorDetail(actorId: '1')).thenAnswer((_) async => Right(tActorDetailEntity));
+      when(mockActorUsecases.getActorDetail(actorId: '1')).thenAnswer((_) async => Right(tActorDetailEntity));
 
-      return GetActorDetailCubit(actorUsecases);
+      return GetActorDetailCubit(mockActorUsecases);
     },
     act: (bloc) => bloc.getActorDetail(actorId: '1'),
     expect: () => [const GetActorDetailLoading(), GetActorDetailLoaded(actor: tActorDetailEntity)],
-    verify: (_) => verify(actorUsecases.getActorDetail(actorId: '1')).called(1),
+    verify: (_) => verify(mockActorUsecases.getActorDetail(actorId: '1')).called(1),
   );
 
   blocTest<GetActorDetailCubit, GetActorDetailState>(
@@ -55,16 +55,16 @@ void main() {
       );
       provideDummy<Either<NetworkException, ActorDetailEntity>>(Left(NetworkException.fromDioError(dioException)));
 
-      when(actorUsecases.getActorDetail(actorId: '1'))
+      when(mockActorUsecases.getActorDetail(actorId: '1'))
           .thenAnswer((_) async => Left(NetworkException.fromDioError(dioException)));
 
-      return GetActorDetailCubit(actorUsecases);
+      return GetActorDetailCubit(mockActorUsecases);
     },
     act: (bloc) => bloc.getActorDetail(actorId: '1'),
     expect: () => [
       const GetActorDetailLoading(),
       const GetActorDetailError(message: 'Please check your internet connection'),
     ],
-    verify: (_) => verify(actorUsecases.getActorDetail(actorId: '1')).called(1),
+    verify: (_) => verify(mockActorUsecases.getActorDetail(actorId: '1')).called(1),
   );
 }

@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_clean_architecture/src/core/exceptions/network/network_exception.dart';
+import 'package:flutter_clean_architecture/src/data/datasources/export_datasources.dart';
 import 'package:flutter_clean_architecture/src/data/models/movie_credit/cast_model.dart';
 import 'package:flutter_clean_architecture/src/data/models/movie_credit/crew_model.dart';
 import 'package:flutter_clean_architecture/src/data/models/movie_credit/movie_credit_model.dart';
@@ -16,8 +17,8 @@ import '../../../_utils/mocks/mocks.mocks.dart';
 
 void main() {
   late final MovieRepository movieRepository;
-  late final MockMovieRemoteDataSource mockMovieRemoteDataSource;
-  late final MockMovieLocalDataSource mockMovieLocalDataSource;
+  late final MovieRemoteDataSource mockMovieRemoteDataSource;
+  late final MovieLocalDataSource mockMovieLocalDataSource;
 
   late final MovieListingsModel tMovieListingsModel;
   late final MovieCreditModel tMovieCreditModel;
