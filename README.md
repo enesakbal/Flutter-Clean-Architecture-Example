@@ -42,20 +42,7 @@ This repository is the companion code for my 5-part Medium article series titled
 <img src="https://github.com/enesakbal/Flutter-Clean-Architecture-Example/assets/60822023/86eff697-1f45-43d4-9ec9-9cbc3bdfdafd" width="250">
 <p/>
 
-
-
-
-
-https://github.com/enesakbal/Flutter-Clean-Architecture-Example/assets/60822023/9067b2d8-61ac-4b0c-8200-e580fc9f1971
-
-
-
-
-
-
-
-
-
+---
 
 
 ## Contributing
