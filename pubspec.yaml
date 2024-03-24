@@ -35,7 +35,7 @@ dependencies:
   flutter_gen: ^5.4.0
 
   # for useful hooks => https://pub.dev/packages/flutter_hooks
-  flutter_hooks: ^0.20.3
+  flutter_hooks: ^0.21.0
 
   # for responsibility => https://pub.dev/packages/flutter_screenutil
   flutter_screenutil: ^5.9.0
