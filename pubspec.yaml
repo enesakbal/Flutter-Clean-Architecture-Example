@@ -11,10 +11,10 @@ dependencies:
   auto_route: ^8.1.3
 
   # for caching images => https://pub.dev/packages/cached_network_image
-  cached_network_image: ^3.3.0
+  cached_network_image: ^3.3.1
 
   # for network requests => https://pub.dev/packages/dio
-  dio: ^5.3.3
+  dio: ^5.4.3+1
 
   # for equality => https://pub.dev/packages/equatable
   equatable: ^2.0.5
@@ -26,31 +26,31 @@ dependencies:
     sdk: flutter
 
   # for state management => https://pub.dev/packages/flutter_bloc
-  flutter_bloc: ^8.1.3
+  flutter_bloc: ^8.1.5
 
   # for environments => https://pub.dev/packages/flutter_dotenv
   flutter_dotenv: ^5.1.0
 
   # for generating assets code => https://pub.dev/packages/flutter_gen
-  flutter_gen: ^5.4.0
+  flutter_gen: ^5.5.0+1
 
   # for useful hooks => https://pub.dev/packages/flutter_hooks
   flutter_hooks: ^0.20.5
 
   # for responsibility => https://pub.dev/packages/flutter_screenutil
-  flutter_screenutil: ^5.9.0
+  flutter_screenutil: ^5.9.3
 
   # for svg => https://pub.dev/packages/flutter_svg
-  flutter_svg: ^2.0.9
+  flutter_svg: ^2.0.10+1
 
   # for functional programming => https://pub.dev/packages/fpdart
   fpdart: ^1.1.0
 
   # for dependency injection => https://pub.dev/packages/get_it
-  get_it: ^7.6.4
+  get_it: ^7.7.0
 
   # for theme or locale management => https://pub.dev/packages/hydrated_bloc
-  hydrated_bloc: ^9.1.2
+  hydrated_bloc: ^9.1.5
 
   intl: ^0.19.0
 
@@ -59,10 +59,10 @@ dependencies:
   isar_flutter_libs: ^3.1.0+1
 
   # for creating api models => https://pub.dev/packages/json_annotation
-  json_annotation: ^4.8.1
+  json_annotation: ^4.9.0
 
   # for app data directories
-  path_provider: ^2.1.1
+  path_provider: ^2.1.3
 
   # a dio interceptor for developer => https://pub.dev/packages/pretty_dio_logger
   pretty_dio_logger: ^1.3.1
@@ -71,17 +71,17 @@ dependencies:
   shimmer: ^3.0.0
 
   # for url launcher => https://pub.dev/packages/url_launcher
-  url_launcher: ^6.2.2
+  url_launcher: ^6.3.0
 
 dev_dependencies:
   # auto_route generator => https://pub.dev/packages/auto_route_generator
   auto_route_generator: ^8.0.0
 
   # for testing bloc => https://pub.dev/packages/bloc_test
-  bloc_test: ^9.1.4
+  bloc_test: ^9.1.7
 
-  build_runner: ^2.4.6
-  flutter_gen_runner: ^5.4.0
+  build_runner: ^2.4.9
+  flutter_gen_runner: ^5.5.0+1
   flutter_lints: ^4.0.0
   flutter_test:
     sdk: flutter
@@ -90,7 +90,7 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
 
   # for creating api models => https://pub.dev/packages/json_serializable
-  json_serializable: ^6.7.1
+  json_serializable: ^6.8.0
 
   # for testing => https://pub.dev/packages/mockito
   mockito: ^5.4.4
