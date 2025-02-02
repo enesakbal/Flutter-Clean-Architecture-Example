@@ -32,7 +32,7 @@ void main() async {
 
   await injector<LocalDatabase>().initialize();
 
-  final directory = await getApplicationDocumentsDirectory();
+  final directory = HydratedStorageDirectory((await getApplicationDocumentsDirectory()).path);
 
   HydratedBloc.storage = await HydratedStorage.build(storageDirectory: directory);
 
