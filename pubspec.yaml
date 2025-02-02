@@ -8,31 +8,31 @@ environment:
 
 dependencies:
   # for routing => https://pub.dev/packages/auto_route
-  auto_route: ^8.1.3
+  auto_route: ^8.1.4
 
   # for caching images => https://pub.dev/packages/cached_network_image
-  cached_network_image: ^3.3.1
+  cached_network_image: ^3.4.1
 
   # for network requests => https://pub.dev/packages/dio
-  dio: ^5.4.3+1
+  dio: ^5.8.0+1
 
   # for equality => https://pub.dev/packages/equatable
-  equatable: ^2.0.5
+  equatable: ^2.0.7
 
   # for theme => https://pub.dev/packages/flex_color_scheme
-  flex_color_scheme: ^7.3.1
+  flex_color_scheme: ^8.1.0
 
   flutter:
     sdk: flutter
 
   # for state management => https://pub.dev/packages/flutter_bloc
-  flutter_bloc: ^8.1.5
+  flutter_bloc: ^9.0.0
 
   # for environments => https://pub.dev/packages/flutter_dotenv
-  flutter_dotenv: ^5.1.0
+  flutter_dotenv: ^5.2.1
 
   # for generating assets code => https://pub.dev/packages/flutter_gen
-  flutter_gen: ^5.5.0+1
+  flutter_gen: ^5.8.0
 
   # for useful hooks => https://pub.dev/packages/flutter_hooks
   flutter_hooks: ^0.20.5
@@ -41,18 +41,18 @@ dependencies:
   flutter_screenutil: ^5.9.3
 
   # for svg => https://pub.dev/packages/flutter_svg
-  flutter_svg: ^2.0.10+1
+  flutter_svg: ^2.0.17
 
   # for functional programming => https://pub.dev/packages/fpdart
-  fpdart: ^1.1.0
+  fpdart: ^1.1.1
 
   # for dependency injection => https://pub.dev/packages/get_it
-  get_it: ^7.7.0
+  get_it: ^8.0.3
 
   # for theme or locale management => https://pub.dev/packages/hydrated_bloc
-  hydrated_bloc: ^9.1.5
+  hydrated_bloc: ^10.0.0
 
-  intl: ^0.19.0
+  intl: ^0.20.2
 
   # for local data source
   isar: ^3.1.0+1
@@ -62,27 +62,27 @@ dependencies:
   json_annotation: ^4.9.0
 
   # for app data directories
-  path_provider: ^2.1.3
+  path_provider: ^2.1.5
 
   # a dio interceptor for developer => https://pub.dev/packages/pretty_dio_logger
-  pretty_dio_logger: ^1.3.1
+  pretty_dio_logger: ^1.4.0
 
   # for shimmer effect => https://pub.dev/packages/shimmer
   shimmer: ^3.0.0
 
   # for url launcher => https://pub.dev/packages/url_launcher
-  url_launcher: ^6.3.0
+  url_launcher: ^6.3.1
 
 dev_dependencies:
   # auto_route generator => https://pub.dev/packages/auto_route_generator
   auto_route_generator: ^8.0.0
 
   # for testing bloc => https://pub.dev/packages/bloc_test
-  bloc_test: ^9.1.7
+  bloc_test: ^10.0.0
 
-  build_runner: ^2.4.9
-  flutter_gen_runner: ^5.5.0+1
-  flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+  flutter_gen_runner: ^5.8.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 
